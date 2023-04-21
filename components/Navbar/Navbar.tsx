@@ -9,6 +9,7 @@ export default function Navbar(): JSX.Element {
     if (pathname === route) return `${styles.item} ${styles.active}`;
     return `${styles.item}`;
   };
+
   return (
     <nav className={styles.container}>
       <ul className={styles.list}>
@@ -17,9 +18,9 @@ export default function Navbar(): JSX.Element {
             Inicio
           </Link>
         </li>
-        <li className={defineStyle('/about')}>
-          <Link style={{ textDecoration: 'None' }} href={'/about'}>
-            Sobre Mí
+        <li className={defineStyle('/projects')}>
+          <Link style={{ textDecoration: 'None' }} href={'/projects'}>
+            Proyectos
           </Link>
         </li>
         <li className={defineStyle('/contact')}>

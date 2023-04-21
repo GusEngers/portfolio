@@ -12,6 +12,23 @@
   height: 100%;
 }
 
+@media (max-width: 721px) {
+  .container {
+    height: 15vh;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .item {
+    margin: 20px 0;
+  }
+}
+
 .item {
   list-style: none;
   margin: 0;
