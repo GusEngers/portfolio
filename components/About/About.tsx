@@ -1,8 +1,8 @@
-import styles from './About.module.css'
+import styles from './About.module.css';
 
 export default function About() {
   return (
-    <div className={styles.container}>
+    <div id='about' className={styles.container}>
       <h1>Sobre Mí</h1>
       <div>
         <div>
@@ -67,5 +67,5 @@ export default function About() {
         </div>
       </div>
     </div>
-  )
+  );
 }

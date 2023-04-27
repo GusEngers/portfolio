@@ -1,6 +1,6 @@
 .container {
   font-family: 'Syne';
-  color: var(--letter)
+  color: var(--letter);
 }
 
 .container h1 {
@@ -28,4 +28,46 @@
 .container div div ul {
   margin: 0 0 0 15px;
   border-left: 2px solid var(--letter);
+}
+
+@media (max-width: 900px) {
+  .container div div {
+    width: 43%;
+  }
+
+  .container div div ul {
+    margin: 0;
+    padding-left: 30px;
+  }
+
+  .container div div ul h4 {
+    margin: 5px 0;
+  }
+
+  .container div div ul p {
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .container div div {
+    width: 100%;
+  }
+
+  .container div div ul {
+    margin: 0;
+    padding-left: 30px;
+  }
+
+  .container div div ul h4 {
+    margin: 5px 0;
+  }
+
+  .container div div ul p {
+    margin: 5px 0;
+  }
+
+  .container h1 {
+    text-align: center;
+  }
 }
