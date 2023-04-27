@@ -1,10 +1,13 @@
 :root {
-  --bg-clear: #ffffff;
-  --bg-dark: #000000;
-  --letter-clear: #000000;
-  --letter-dark: #ffffff;
-  --letter-clear-style: #0e0ae6;
-  --letter-dark-style: #15ffff;
+  --bg: #ffffff;
+  --letter: #000000;
+  --letter-style: #0e0ae6;
+}
+
+[data-theme='dark'] {
+  --bg: #000000;
+  --letter: #ffffff;
+  --letter-style: #15ffff;
 }
 
 @font-face {

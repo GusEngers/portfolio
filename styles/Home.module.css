@@ -1,5 +1,5 @@
 .main {
-  background-color: var(--bg-dark);
+  background-color: var(--bg);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -8,6 +8,6 @@
 }
 
 .main h1 {
-  color: var(--letter-dark-style);
+  color: var(--letter-style);
   font-family: 'Syne';
 }
