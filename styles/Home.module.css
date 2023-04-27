@@ -7,7 +7,7 @@
   min-height: 100vh;
 }
 
-.main h1 {
-  color: var(--letter-style);
-  font-family: 'Syne';
+.container {
+  width: 70%;
+  border: 1px solid blue;
 }

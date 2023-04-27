@@ -1,0 +1,35 @@
+.container {
+  font-family: 'Syne';
+  width: 100%;
+  display: flex;
+}
+
+.container_one {
+  width: 50%;
+}
+
+.container_one span {
+  font-size: 40px;
+  color: var(--letter-style);
+}
+
+.container_two {
+  width: 50%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.container_two span {
+  font-size: 20px;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container_two span a {
+  text-decoration: none;
+  color: var(--letter);
+}
