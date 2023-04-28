@@ -71,3 +71,18 @@
     text-align: center;
   }
 }
+
+.container h3 {
+  margin: 10px 0;
+}
+
+.techs {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.techs svg {
+  margin: 5px 0;
+}

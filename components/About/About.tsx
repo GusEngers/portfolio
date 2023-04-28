@@ -1,4 +1,5 @@
 import styles from './About.module.css';
+import Techs from './Techs';
 
 export default function About() {
   return (
@@ -57,15 +58,17 @@ export default function About() {
             </li>
             <li>
               <h4>Portugués</h4>
-              <p>Lectura</p>
+              <p>Lectura y conversación</p>
             </li>
             <li>
               <h4>Inglés</h4>
-              <p>Básico A1</p>
+              <p>Básico</p>
             </li>
           </ul>
         </div>
       </div>
+      <h3>Tecnologías</h3>
+      <Techs />
     </div>
   );
 }
