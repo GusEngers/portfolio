@@ -1,7 +1,7 @@
 import styles from './Project.module.css';
 import { Card } from './data';
 
-export default function Project(project: Card) {
+export default function Project(project: Card): JSX.Element {
   return (
     <div className={styles.container}>
       <img

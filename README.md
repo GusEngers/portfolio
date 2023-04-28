@@ -1,38 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MI PORTFOLIO
 
-## Getting Started
+Proyecto personal el cual tiene la finalidad de plasmar mis trabajos más importantes.<br>
+Además lograr mostrar información personal relevante para el ámbito de mi trabajo como así también los distintos medios por el cual podamos mantener contacto.
 
-First, run the development server:
+## SOBRE LA APP
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+La aplicación cuenta con distintas partes de fácil reconocimiento:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### BARRA DE NAVEGACIÓN Y PORTADA
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Contienen los siguientes elementos:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Nombre
+- Botón para cambiar entre tema claro/oscuro
+- Distintos enlaces para navegar en la página
+- Texto con la finalidad de la app junto a una imagen característica
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### SOBRE MÍ
 
-## Learn More
+Contienen los siguientes elementos:
 
-To learn more about Next.js, take a look at the following resources:
+- Sección experiencia
+- Sección formación académica
+- Sección certificaciones
+- Sección idiomas
+- Sección tecnologías
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### PROYECTOS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Contienen los siguientes elementos:
 
-## Deploy on Vercel
+- Lista de cards con la siguiente información:
+- - Imagen característica del proyecto
+- - Nombre del proyecto
+- - Descripción del proyecto
+- - Tecnologías usadas en el proyecto
+- - Distintos enlaces hacia el repositorio o el deploy del proyecto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### CONTACTO
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Lista de enlaces donde se encuentran las distintas formas de contactarme
+
+## MÁS INFORMACIÓN
+
+---
+
+La aplicación esta desarrollada con NextJS junto a Typescript, los estilos están desarrollados con CSS modularizado que cuenta con variables para determinar los distintos colores empleados además de añadir una fuente de texto de forma externa.<br>
+La aplicación es adaptable a distintos dispositivos.

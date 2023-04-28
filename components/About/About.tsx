@@ -1,7 +1,7 @@
 import styles from './About.module.css';
 import Techs from './Techs';
 
-export default function About() {
+export default function About(): JSX.Element {
   return (
     <div id='about' className={styles.container}>
       <h1>Sobre Mí</h1>
