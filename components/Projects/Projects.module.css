@@ -1,0 +1,19 @@
+.container {
+  font-family: 'Syne';
+  color: var(--letter);
+}
+
+.container h1 {
+  color: var(--letter-style);
+}
+
+.container div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 500px) {
+  .container h1 {
+    text-align: center;
+  }
+}

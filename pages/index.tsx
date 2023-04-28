@@ -4,6 +4,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar/Navbar';
 import Intro from '@/components/Intro/Intro';
 import About from '@/components/About/About';
+import Projects from '@/components/Projects/Projects';
 
 export default function Home(): JSX.Element {
   const [theme, setTheme] = React.useState('light');
@@ -29,6 +30,7 @@ export default function Home(): JSX.Element {
           <Navbar />
           <Intro />
           <About />
+          <Projects />
         </div>
         <button onClick={() => changeTheme()}>aprieta</button>
       </main>
