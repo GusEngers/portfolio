@@ -27,12 +27,11 @@ export default function Home(): JSX.Element {
       </Head>
       <main id='general' className={styles.main}>
         <div className={styles.container}>
-          <Navbar />
+          <Navbar theme={theme} action={changeTheme} />
           <Intro />
           <About />
           <Projects />
         </div>
-        <button onClick={() => changeTheme()}>aprieta</button>
       </main>
     </>
   );

@@ -6,6 +6,23 @@
 
 .container_one {
   width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container_one button {
+  border: 2px solid var(--letter);
+  height: 40px;
+  width: 40px;
+  background: none;
+  border-radius: 25px;
+}
+
+.container_one button:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
 }
 
 .container_one span {
