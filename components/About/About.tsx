@@ -33,19 +33,51 @@ export default function About() {
           <ul>
             <li>
               <h4>Javascript en OpenBootcamp</h4>
-              <p>Jul. 2022 - Nov. 2022</p>
+              <p>
+                <a
+                  href='https://community.open-bootcamp.com/user/gusengers/certificaciones/49d13051-3e72-4927-8ae7-7f2b81dd481a'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Credencial
+                </a>
+              </p>
             </li>
             <li>
               <h4>Angular en OpenBootcamp</h4>
-              <p>Jul. 2022 - Nov. 2022</p>
+              <p>
+                <a
+                  href='https://community.open-bootcamp.com/user/gusengers/certificaciones/cffd0ba7-9e8e-4929-b2dc-81f4d8b2ac3a'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Credencial
+                </a>
+              </p>
             </li>
             <li>
               <h4>Typescript en OpenBootcamp</h4>
-              <p>Jul. 2022 - Nov. 2022</p>
+              <p>
+                <a
+                  href='https://community.open-bootcamp.com/user/gusengers/certificaciones/4d186bef-d375-4a42-8dfc-3bdce475606e'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Credencial
+                </a>
+              </p>
             </li>
             <li>
-              <h4>Python - Básico en OpenBootcamp</h4>
-              <p>Jul. 2022 - Nov. 2022</p>
+              <h4>Python en OpenBootcamp</h4>
+              <p>
+                <a
+                  href='https://community.open-bootcamp.com/user/gusengers/certificaciones/cd565257-4a3f-4b55-acd8-f924dec8466a'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Credencial
+                </a>
+              </p>
             </li>
           </ul>
         </div>

@@ -9,10 +9,11 @@
 
 .container div {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 900px) {
   .container h1 {
     text-align: center;
   }

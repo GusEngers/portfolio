@@ -79,10 +79,10 @@
 .techs {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .techs svg {
-  margin: 5px 0;
+  margin: 2.5px;
 }
