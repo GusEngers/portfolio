@@ -31,11 +31,11 @@ export const PJS: Card[] = [
     links: [
       {
         name: 'Ver Código - V1',
-        url: 'https://github.com/PG-Movies-Group-1/Kinema-Project',
+        url: 'https://github.com/PG-Movies-Group-1/Kinema-Project#readme',
       },
       {
         name: 'Ver Código - V2',
-        url: 'https://github.com/GusEngers/Kinema-Project-GE',
+        url: 'https://github.com/GusEngers/Kinema-Project-GE#readme',
       },
       {
         name: 'Ver Sitio Web',
@@ -50,6 +50,7 @@ export const PJS: Card[] = [
     description:
       'Sitio web con la finalidad de buscar información sobre pokemons, consta de diversos filtrados y contempla la posibilidad de crear tu propio pokemon.',
     techs: [
+      'Javascript',
       'React',
       'Node.js',
       'Redux-Toolkit',
@@ -72,9 +73,22 @@ export const PJS: Card[] = [
     name: 'User-Auth-Api',
     description:
       'API de autenticación y almacenamiento de usuarios en una base de datos, con contraseñas que pasan por su respectivo método de hashing.',
-    techs: ['Node.js', 'JWT', 'Bcrypt', 'MongoDB', 'Mongoose'],
+    techs: [
+      'Javascript',
+      'Node.js',
+      'Express',
+      'Joi',
+      'JWT',
+      'Bcrypt',
+      'MongoDB',
+      'Mongoose',
+    ],
     links: [
-      { name: 'Ver Código', url: 'https://github.com/GusEngers/user-auth-api' },
+      {
+        name: 'Ver Código',
+        url: 'https://github.com/GusEngers/user-auth-api#readme',
+      },
+      { name: 'Documentación', url: 'https://ge-us.onrender.com/lhqcbldt' },
     ],
   },
   {
@@ -83,12 +97,65 @@ export const PJS: Card[] = [
     name: 'Weather-App',
     description:
       'Sitio web para consultar información respecto al clima de la ciudad que quiere buscar, además contempla la posibilidad de guardar distintas ciudades en su sección de favoritos.',
-    techs: ['React', 'Redux-Toolkit', 'Axios', 'CSS'],
+    techs: ['Javascript', 'React', 'Redux-Toolkit', 'Axios', 'CSS'],
     links: [
       { name: 'Ver Código', url: 'https://github.com/GusEngers/weather-app' },
       {
         name: 'Ver Sitio Web',
         url: 'https://weather-app-gusengers.vercel.app/',
+      },
+    ],
+  },
+  {
+    image: 'https://miro.medium.com/max/2560/1*4RIXfWCSrDsagQWHil5unw.jpeg',
+    name: 'Wikipedia-Scraping',
+    description:
+      'Pequeño proyecto de Web Scraping usando la página de Wikipedia con funciones como obtener los idiomas disponibles en la página, búsqueda de artículos y texto de artículos de forma individual.',
+    techs: ['Javascript', 'Node.js', 'Express', 'Axios', 'Cheerio'],
+    links: [
+      {
+        name: 'Ver Código',
+        url: 'https://github.com/GusEngers/wikipedia-scraping#readme',
+      },
+      {
+        name: 'Documentación',
+        url: 'https://ge-us.onrender.com/lh8ib4zp',
+      },
+    ],
+  },
+  {
+    image:
+      'https://www.javiramosmarketing.com/wp-content/uploads/2016/11/acortar-url.jpg',
+    name: 'Url-Shorten',
+    description:
+      'Acortador de urls simple con pocas funcionalidades: añadir, redireccionar y obtener una lista con todas las urls. Está en proceso de desarrollo un cliente para un uso más cómodo.',
+    techs: ['Javascript', 'Node.js', 'Express', 'Mongoose', 'MongoDB'],
+    links: [
+      {
+        name: 'Ver Código',
+        url: 'https://github.com/GusEngers/url-shorten#readme',
+      },
+      {
+        name: 'Actualmente su documentación se encuentra en desarrollo aunque pueden acceder al README del repositorio!',
+        url: '#',
+      },
+    ],
+  },
+  {
+    image:
+      'https://res.cloudinary.com/drfty5u58/image/upload/v1684243337/tma_ycrowt.png',
+    name: 'Tasks-Management-Api',
+    description:
+      'Con la finalidad de poner en práctica el desarrollo con NestJS surge este simple proyecto de manejo de tareas personal donde el objetivo era la modularización del código como así también lograr una conexión a una base de datos.',
+    techs: ['Typescript', 'NestJS', 'Mongoose', 'MongoDB'],
+    links: [
+      {
+        name: 'Ver Código',
+        url: 'https://github.com/GusEngers/url-shorten#readme',
+      },
+      {
+        name: 'Documentación',
+        url: 'https://ge-us.onrender.com/lhqdarcs',
       },
     ],
   },

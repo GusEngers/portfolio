@@ -43,11 +43,13 @@
 
 .container div {
   width: 100%;
-  justify-content: center;
+  display: flex;
+  justify-content: center !important;
 }
 
 .container div span {
-  margin: 2px 5px;
+  margin: 2px 7.5px;
+  color: var(--letter-style);
 }
 
 .msg {

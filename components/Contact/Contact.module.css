@@ -50,6 +50,10 @@
 }
 
 @media (max-width: 900px) {
+  .container h1 {
+    text-align: center;
+  }
+
   .container div p {
     width: 100%;
   }

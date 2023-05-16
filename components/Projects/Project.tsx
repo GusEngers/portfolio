@@ -14,8 +14,8 @@ export default function Project(project: Card): JSX.Element {
       <p>{project.description}</p>
       <h4>Algunas techs usadas</h4>
       <div>
-        {project.techs.map((tech) => (
-          <span>{tech}</span>
+        {project.techs.map((tech, index) => (
+          <span key={`${tech}-${index}`}>{tech}</span>
         ))}
       </div>
       {project.links.map((link) =>
