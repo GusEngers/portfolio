@@ -1,51 +1,27 @@
-# MI PORTFOLIO
+# Portfolio
 
-Proyecto personal el cual tiene la finalidad de plasmar mis trabajos más importantes.<br>
-Además lograr mostrar información personal relevante para el ámbito de mi trabajo como así también los distintos medios por el cual podamos mantener contacto.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
 
-## SOBRE LA APP
+## Development server
 
----
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-La aplicación cuenta con distintas partes de fácil reconocimiento:
+## Code scaffolding
 
-### BARRA DE NAVEGACIÓN Y PORTADA
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Contienen los siguientes elementos:
+## Build
 
-- Nombre
-- Botón para cambiar entre tema claro/oscuro
-- Distintos enlaces para navegar en la página
-- Texto con la finalidad de la app junto a una imagen característica
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-### SOBRE MÍ
+## Running unit tests
 
-Contienen los siguientes elementos:
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-- Sección experiencia
-- Sección formación académica
-- Sección certificaciones
-- Sección idiomas
-- Sección tecnologías
+## Running end-to-end tests
 
-### PROYECTOS
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-Contienen los siguientes elementos:
+## Further help
 
-- Lista de cards con la siguiente información:
-- - Imagen característica del proyecto
-- - Nombre del proyecto
-- - Descripción del proyecto
-- - Tecnologías usadas en el proyecto
-- - Distintos enlaces hacia el repositorio o el deploy del proyecto
-
-### CONTACTO
-
-Lista de enlaces donde se encuentran las distintas formas de contactarme
-
-## MÁS INFORMACIÓN
-
----
-
-La aplicación esta desarrollada con NextJS junto a Typescript, los estilos están desarrollados con CSS modularizado que cuenta con variables para determinar los distintos colores empleados además de añadir una fuente de texto de forma externa.<br>
-La aplicación es adaptable a distintos dispositivos.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
