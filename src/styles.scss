@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "SyneMono";
+}
+
+@font-face {
+  font-family: "SyneMono";
+  src: url("./assets/SyneMono-Regular.ttf");
+}

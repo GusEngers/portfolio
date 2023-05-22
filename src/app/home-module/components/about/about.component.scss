@@ -1,0 +1,28 @@
+.title {
+  color: #15ffff;
+}
+
+.about_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about ul {
+  margin-left: 20px;
+  border-left: 2px solid #ffff;
+}
+
+.formation {
+  width: 40vw;
+}
+
+@media (max-width: 900px) {
+  .formation {
+    width: 90vw;
+  }
+
+  .title {
+    width: 100%;
+    text-align: center;
+  }
+}
