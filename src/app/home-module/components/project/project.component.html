@@ -1,0 +1,26 @@
+
+  <img [src]="image" [alt]="name" />
+  <h1>{{ name }}</h1>
+  <p>{{ description }}</p>
+  <section class="techs_links">
+    <section>
+      <h3>Tecnologías</h3>
+      <ul class="techs">
+        <li *ngFor="let tech of techs">{{ tech.name }}</li>
+      </ul>
+    </section>
+    <section class="section">
+      <ul class="links">
+        <li *ngFor="let link of links" [ngClass]="link.url != '#' ? 'url' : 'error'">
+          <ng-container *ngIf="link.url != '#'; else not">
+            <a [href]="link.url" target="_blank" rel="noopener noreferrer">{{
+              link.name
+            }}</a>
+          </ng-container>
+          <ng-template #not>
+            <span>{{ link.name }}</span>
+          </ng-template>
+        </li>
+      </ul>
+    </section>
+  </section>
