@@ -1,13 +1,41 @@
 .title {
   color: #15ffff;
+  width: 100%;
+  text-align: center;
 }
 
 .about_container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.about ul {
+.about_1 {
+  width: 30vw;
+}
+
+.about_2 {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.about_3 {
+  width: 15vw;
+
+  app-techs {
+    width: 10vw;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.about_1 ul {
+  margin-left: 20px;
+  border-left: 2px solid #ffff;
+}
+
+.child ul {
   margin-left: 20px;
   border-left: 2px solid #ffff;
 }
@@ -17,11 +45,26 @@
 }
 
 @media (max-width: 900px) {
-  .formation {
-    width: 90vw;
+  .about_1 {
+    width: 100vw;
   }
 
-  .title {
+  .about_2 {
+    width: 100vw;
+  }
+
+  .about_3 {
+    width: 100vw;
+
+    app-techs {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  .subtitle {
     width: 100%;
     text-align: center;
   }

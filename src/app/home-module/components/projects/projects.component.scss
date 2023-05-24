@@ -6,6 +6,8 @@
 
 h1 {
   color: #15ffff;
+  width: 100%;
+  text-align: center;
 }
 
 app-project {
@@ -23,12 +25,5 @@ app-project {
   .container {
     width: 100vw;
     justify-content: center;
-  }
-}
-
-@media (max-width: 900px) {
-  h1 {
-    width: 100%;
-    text-align: center;
   }
 }
