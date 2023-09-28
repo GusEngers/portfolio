@@ -1,0 +1,41 @@
+.nav-bar {
+  width: 90%;
+}
+
+.nav-bar nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list {
+  display: flex;
+}
+
+.list li {
+  list-style: none;
+  margin: 10px 20px;
+}
+
+.btn-home {
+  color: #00ffb3;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.btn-home:hover {
+  color: #6bffd3;
+}
+
+.btn-list {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.btn-list:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px 20px;
+}

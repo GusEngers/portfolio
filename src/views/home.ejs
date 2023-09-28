@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    [%- include('__components/global-head', {title: 'GusEngers - Portfolio'}) %]
+    <link rel="stylesheet" href="/public/css/home.css" />
+  </head>
+  <body>
+    [%- include('__components/nav-bar') %]
+
+    <main class="main">
+      <section class="section-container">
+        <div class="info-section">
+          <h1>Soy <b>Gustavo Engers</b></h1>
+          <h3>Desarrollador Web Full-Stack</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam illo
+            cupiditate voluptate id? Odit minus nostrum eius atque, consectetur
+            dignissimos fuga.
+          </p>
+        </div>
+
+        [% if(!!techs.length){ %]
+
+        <div class="techs-section">
+          [% for(let tech of techs){ %]
+
+          <iconify-icon
+            icon="[%= tech.icon %]"
+            width="25"
+            title="[%= tech.name %]"
+            class="icon-home"
+          ></iconify-icon>
+
+          [% } %]
+        </div>
+
+        [% } %]
+      </section>
+    </main>
+
+    <!-- Scripts -->
+    [%- include('__components/global-scripts') %]
+  </body>
+</html>
