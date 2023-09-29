@@ -18,7 +18,6 @@ const Tech = model(
     details: [
       {
         type: String,
-        required: true,
       },
     ],
   })

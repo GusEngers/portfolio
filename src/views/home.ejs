@@ -8,16 +8,11 @@
     [%- include('__components/nav-bar') %]
 
     <main class="main">
-      <section class="section-container">
-        <div class="info-section">
-          <h1>Soy <b>Gustavo Engers</b></h1>
-          <h3>Desarrollador Web Full-Stack</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam illo
-            cupiditate voluptate id? Odit minus nostrum eius atque, consectetur
-            dignissimos fuga.
-          </p>
-        </div>
+      <section class="info-container">
+        <h1>¡Bienvenidos a mi Portfolio!</h1>
+        <p>
+          Hola soy <b>Gustavo Engers</b>, un Desarrollador Web especializado en el Desarrollo Back-End y un entusiasta del Desarrollo Front-End. Mi pasión por la programación me impulsa a seguir aprendiendo y creciendo. ¡Disfruta mis proyectos!
+        </p>
 
         [% if(!!techs.length){ %]
 
@@ -35,6 +30,32 @@
         </div>
 
         [% } %]
+      </section>
+      <section class="project-container">
+        <h2>Proyecto Destacado</h2>
+        <article class="project">
+          <img src="[%= project.avatar.path %]" alt="[%= project.name %]" />
+          <div class="info-project">
+            <h3>[%= project.name %]</h3>
+            <p>[%= project.description %]</p>
+            <a href="/project/[%= project._id %]" class="btn-project">Ver Más</a>
+            <a
+              href="[%= project.github %]"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-project"
+              >Ver Repositorio</a
+            >
+            <a
+              href="[%= project.deploy %]"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-project"
+              >Ver Sitio</a
+            >
+          </div>
+        </article>
+        <a href="/projects" class="btn">Más Proyectos</a>
       </section>
     </main>
 
