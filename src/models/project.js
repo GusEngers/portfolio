@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const { TYPES } = require('../utils/constants');
 
 const Project = model(
   'project',
@@ -32,7 +33,8 @@ const Project = model(
     ],
     type: {
       type: String,
-      enum: ['Full-Stack', 'Back-End', 'Front-End', 'Otros'],
+      lowercase: true,
+      enum: TYPES,
     },
     github: {
       type: String,

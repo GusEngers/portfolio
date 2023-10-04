@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('__components/global-head', { title: 'GusEngers - Proyectos' })
+    %>
+  </head>
+  <body>
+    <%- include('__components/nav-bar') %>
+    <%- include('__components/filter-bar') %>
+
+    <main class="main">
+
+      <% if (!projects.length) { %>
+        <h1>¡Ups! Lo siento</h1>
+        <p>Parece que todavía no hay proyectos de este tipo</p>
+      <% } else { %>
+        <% for( let project of projects) { %>
+          <%- include('__components/card', {
+            avatar: project.avatar.path,
+            name: project.name,
+            description: project.description,
+            id: project._id,
+            github: project.github,
+            deploy: project.deploy,
+            docs: project.docs
+          }) %>
+        <% } %>
+      <% } %>
+
+    </main>
+
+    <!-- Scripts -->
+    <%- include('__components/global-scripts') %>
+    <script src="/public/js/filter-bar.js"></script>
+  </body>
+</html>
