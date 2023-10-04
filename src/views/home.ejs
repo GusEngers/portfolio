@@ -14,7 +14,7 @@
         <p class="background">Desarrollador Web Full-Stack</p>
         <h2>¡Bienvenidos a mi Portfolio!</h2>
         <p>
-          Hola soy <b>Gustavo Engers</b>, un Desarrollador Web especializado en el Desarrollo Back-End con Node y Express, además de un entusiasta del Desarrollo Front-End con Angular. Mi pasión por la programación me impulsa a seguir aprendiendo y creciendo. ¡Disfruta mis proyectos!
+          Hola soy <b>Gustavo Engers</b>, un Desarrollador Web especializado en el Desarrollo Back-End con Node y Express, además de un entusiasta del Desarrollo Front-End con Javascript, HTML y CSS. Mi pasión por la programación me impulsa a seguir aprendiendo y creciendo. ¡Disfruta mis proyectos!
         </p>
 
         <% if (!!techs.length) { %>
@@ -35,9 +35,15 @@
       <section class="project-container">
         <h2>Proyecto Destacado</h2>
 
-        <%- include('__components/card', { avatar: project.avatar.path, name:
-        project.name, description: project.description, id: project._id, github:
-        project.github, deploy: project.deploy, docs: project.docs }) %>
+        <%- include('__components/card', {
+          avatar: project.avatar.path,
+          name: project.name,
+          description: project.description,
+          id: project._id,
+          github: project.github,
+          deploy: project.deploy,
+          docs: project.docs
+        }) %>
 
         <a href="/proyectos" class="btn">Más Proyectos</a>
       </section>

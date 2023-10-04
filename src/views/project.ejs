@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('__components/global-head', { title }) %>
+    <link rel="stylesheet" href="/public/css/project.css" />
+  </head>
+  <body>
+    <%- include('__components/nav-bar') %>
+
+    <main class="main">
+
+      <% if (msg) { %>
+        <div class="not-found-project">
+          <h1><%= msg %></h1>
+          <div>
+            <a class="btn" href="/">Volver al Inicio</a>
+            <a class="btn" href="/proyectos">Volver a Proyectos</a>
+          </div>
+        </div>
+      <% } else { %>
+        <h1 class="title-project"><%= project.name %></h1>
+        <h2 class="type-project"><%= project.type %></h2>
+
+        <div class="description-cont">
+          <img src="<%= project.avatar.path %>" width="30%" alt="<%= project.avatar.originalname %>" />
+          <p><%= project.description %></p>
+        </div>
+
+        <div class="info-cont">
+          <div class="info-info">
+            <h3>Principales características</h3>
+            <ul>
+              <% for( let task of project.tasks ) { %>
+                <li><%= task %></li>
+              <% } %>
+            </ul>
+          </div>
+          
+          <div class="info-techs">
+            <h3>Principales tecnologías</h3>
+            <ul>
+              <% for( let tech of project.techs ) { %>
+                <iconify-icon
+                  icon="<%= tech.icon %>"
+                  width="25"
+                  title="<%= tech.name %>"
+                  class="icon-home"
+                ></iconify-icon>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Accesos</h3>
+        <div class="access-cont">
+          <a
+            href="<%= project.github %>"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-project"
+          >Repositorio</a>
+          <% if (project.deploy) { %>
+            <a
+              href="<%= project.deploy %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-project"
+            >Sitio Web</a>
+          <% } %>
+          <% if (project.docs) { %>
+            <a
+              href="<%= project.docs %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-project"
+            >Documentación</a>
+          <% } %>
+        </div>
+
+        <% if (!!project.images.length) { %>
+          <h3>Imágenes adicionales</h3>
+          <% for( let image of project.images ) { %>
+            <img
+              src="<%= image.path %>"
+              width="70%"
+              style="margin-top: 10px; margin-bottom: 10px;"
+              alt="<%= image.originalname %>"
+            />
+          <% } %>
+        <% } %>
+      <% } %>
+
+    </main>
+
+    <!-- Scripts -->
+    <%- include('__components/global-scripts') %>
+  </body>
+</html>
