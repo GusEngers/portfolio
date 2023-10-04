@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include('__components/global-head', { title: 'GusEngers - Error' }) %>
+    <%- include('__components/global-head', { title: "GusEngers - Error" }) %>
   </head>
   <body>
-    <h1><%= error %></h1>
-
-    <!-- Scripts -->
-    <%- include('__components/global-scripts') %>
+    <%- include('__components/nav-bar') %>
+    <main class="main">
+      <div class="error-page">
+        <h1>Lo siento un error a ocurrido</h1>
+        <h3><%= error %></h3>
+        <div>
+          <a class="btn" href="/">Volver al Inicio</a>
+          <a class="btn" href="/proyectos">Volver a Proyectos</a>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
