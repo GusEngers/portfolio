@@ -3,16 +3,18 @@ const {
   getHomeProject,
 } = require('../controllers/get-home-data');
 
-const R = require('express').Router();
+const router = require('express').Router();
 
-R.get('/', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const techs = await getHomeTechs();
-    const project = await getHomeProject();
+    const [techs, project] = await Promise.all([
+      getHomeTechs(),
+      getHomeProject(),
+    ]);
     res.render('home', { techs, project });
   } catch (error) {
     res.render('error', { error: error.message });
   }
 });
 
-module.exports = R;
+module.exports = router;

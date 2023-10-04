@@ -1,0 +1,33 @@
+<article class="project">
+  <img src="<%= avatar %>" alt="<%= name %>" />
+  <div class="info-project">
+    <h3><%= name %></h3>
+    <p><%= description %></p>
+    <a href="/project/<%= id %>" class="btn-project">Más Info</a>
+    <a
+      href="<%= github %>"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-project"
+      >Repositorio</a
+    >
+    <% if (deploy) { %>
+      <a
+        href="<%= deploy %>"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-project"
+        >Sitio Web</a
+      >
+    <% } %>
+    <% if (docs) { %>
+      <a
+      href="<%= docs %>"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-project"
+      >Documentación</a
+    >
+    <% } %>
+  </div>
+</article>

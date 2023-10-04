@@ -12,6 +12,9 @@ function btnChange(id) {
 window.addEventListener('load', () => {
   const path = window.location.pathname;
 
+  if (path === '/') {
+    btnChange('nav-0');
+  }
   if (path === '/proyectos') {
     btnChange('nav-1');
   }

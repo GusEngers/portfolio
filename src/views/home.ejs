@@ -1,65 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    [%- include('__components/global-head', {title: 'GusEngers - Portfolio'}) %]
+    <%- include('__components/global-head', { title: 'GusEngers - Portfolio' })
+    %>
     <link rel="stylesheet" href="/public/css/home.css" />
   </head>
   <body>
-    [%- include('__components/nav-bar') %]
+    <%- include('__components/nav-bar') %>
 
     <main class="main">
       <section class="info-container">
-        <h1>¡Bienvenidos a mi Portfolio!</h1>
+        <h1>Gustavo Engers</h1>
+        <p class="background">Desarrollador Web Full-Stack</p>
+        <h2>¡Bienvenidos a mi Portfolio!</h2>
         <p>
-          Hola soy <b>Gustavo Engers</b>, un Desarrollador Web especializado en el Desarrollo Back-End y un entusiasta del Desarrollo Front-End. Mi pasión por la programación me impulsa a seguir aprendiendo y creciendo. ¡Disfruta mis proyectos!
+          Hola soy <b>Gustavo Engers</b>, un Desarrollador Web especializado en
+          el Desarrollo Back-End y un entusiasta del Desarrollo Front-End. Mi
+          pasión por la programación me impulsa a seguir aprendiendo y
+          creciendo. ¡Disfruta mis proyectos!
         </p>
 
-        [% if(!!techs.length){ %]
-
+        <% if (!!techs.length) { %>
         <div class="techs-section">
-          [% for(let tech of techs){ %]
-
+          <% for( let tech of techs ) { %>
           <iconify-icon
-            icon="[%= tech.icon %]"
+            icon="<%= tech.icon %>"
             width="25"
-            title="[%= tech.name %]"
+            title="<%= tech.name %>"
             class="icon-home"
           ></iconify-icon>
 
-          [% } %]
+          <% } %>
         </div>
-
-        [% } %]
+        <% } %>
       </section>
+
       <section class="project-container">
         <h2>Proyecto Destacado</h2>
-        <article class="project">
-          <img src="[%= project.avatar.path %]" alt="[%= project.name %]" />
-          <div class="info-project">
-            <h3>[%= project.name %]</h3>
-            <p>[%= project.description %]</p>
-            <a href="/project/[%= project._id %]" class="btn-project">Ver Más</a>
-            <a
-              href="[%= project.github %]"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-project"
-              >Ver Repositorio</a
-            >
-            <a
-              href="[%= project.deploy %]"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn-project"
-              >Ver Sitio</a
-            >
-          </div>
-        </article>
+
+        <%- include('__components/card', { avatar: project.avatar.path, name:
+        project.name, description: project.description, id: project._id, github:
+        project.github, deploy: project.deploy, docs: project.docs }) %>
+
         <a href="/projects" class="btn">Más Proyectos</a>
       </section>
     </main>
 
     <!-- Scripts -->
-    [%- include('__components/global-scripts') %]
+    <%- include('__components/global-scripts') %>
   </body>
 </html>
