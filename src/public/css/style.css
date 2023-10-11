@@ -4,123 +4,65 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: #202020;
+  background-color: #000;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
-h1 {
-  font-size: 40px;
-}
-
-.icon-home {
+/* Navbar */
+.nav-navbar {
   display: flex;
-  align-items: center;
+  font-size: 1rem;
   justify-content: center;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  padding: 5px;
-  margin: 5px;
-}
-
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: #00ffb3;
-  color: #000;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #6bffd3;
-}
-
-.btn-project {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn-project:hover {
-  background-color: #303030;
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  padding: 15px 20px;
   width: 100%;
 }
 
-/* Card */
-.project {
+.nav-items {
   display: flex;
-  background-color: #444444;
-  width: 70%;
-  margin: 20px 0;
+  gap: 20px;
 }
 
-.project img {
-  width: 30%;
-}
-
-.info-project {
-  padding: 0 10px;
-  width: 70%;
-}
-
-.info-project h3 {
-  color: #00ffb3;
-}
-
-/* Filter Bar */
-
-.btn-filter {
+.nav-items .nav-item {
   color: #fff;
   text-decoration: none;
-  background-color: #ffffff33;
-  border: 2px solid #fff;
-  border-radius: 10px;
-  padding: 10px 20px;
 }
 
-.btn-filter:hover {
-  background-color: #ffffff5e;
-  border-radius: 10px;
-  padding: 10px 20px;
+.nav-item-show {
+  color: #18f0dd;
 }
 
-/* Error Page */
-.error-page {
-  height: 70vh;
-  display: flex;
+.nav-menu-toggle {
+  display: none;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  cursor: pointer;
 }
 
-.error-page h1 {
-  text-align: center;
-  text-transform: uppercase;
+.nav-menu-bar {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 3px 0;
 }
 
-.error-page h3 {
-  text-align: center;
-  width: 70%;
-  text-transform: uppercase;
+@media (max-width: 768px) {
+  .menu-toggle {
+      display: flex;
+  }
+  .nav-items {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #333;
+      position: absolute;
+      top: 60px;
+      left: 0;
+  }
+  .nav-items.show {
+      display: flex;
+  }
 }
