@@ -6,13 +6,13 @@
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
-  --bg-color: #272727;
+  --bg-color: #0e0e0e;
   --bg-color-secondary: #000;
   --text-color: #fff;
-  --primary-color: #0bffde;
-  --secondary-color: #ff7235;
-  --primary-shadow: #8b8eaf;
-  --secondary-shadow: #a17a69;
+  --primary-color: #00ffff;
+  --secondary-color: #ff0000;
+  --primary-shadow: #009999;
+  --secondary-shadow: #920000;
   --bottom-margin: 0.5rem;
   --bottom-margin-2: 1rem;
   --line-height: 1.7rem;
@@ -28,6 +28,11 @@ body {
   font-family: var(--font-family);
   background-color: var(--bg-color);
   color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }
 
 a {
@@ -57,6 +62,7 @@ a:hover {
   padding: 1.5rem 3.5rem;
   background-color: var(--bg-color-secondary);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 .nav h1 {
@@ -95,6 +101,53 @@ a:hover {
   color: var(--primary-color);
 }
 
+/* -- Footer -- */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--bg-color-secondary);
+  padding: 1rem 0;
+}
+
+.footer-icons {
+  display: flex;
+}
+
+.footer-icons-icon {
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  margin: 0.5rem;
+}
+
+.footer-paths {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer-paths div {
+  display: flex;
+  align-items: flex-start;
+  width: 50%;
+  border: 1px solid red;
+}
+
+.footer-paths-explore {
+  justify-content: flex-end;
+}
+
+.footer-paths-project {
+  justify-content: flex-start;
+}
+
 /* -- Home Page -- */
 .home-main {
   display: flex;
@@ -102,7 +155,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 80vh;
+  min-height: 75vh;
   margin: auto;
 }
 
