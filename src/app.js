@@ -1,8 +1,8 @@
 const express = require('express');
 const path = require('path');
 const handleCors = require('./utils/handleCors');
-const handleNotFound = require('./utils/handleNotFound');
-const handleError = require('./utils/handleError');
+// const handleNotFound = require('./utils/handleNotFound');
+// const handleError = require('./utils/handleError');
 const router = require('./routes/index');
 
 const app = express();
@@ -19,7 +19,7 @@ app.use(handleCors);
 
 app.use('/', router);
 
-app.use(handleError);
-app.use(handleNotFound);
+// app.use(handleError);
+// app.use(handleNotFound);
 
 module.exports = app;

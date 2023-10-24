@@ -13,10 +13,11 @@ router.get('/', async (req, res) => {
     // res.render('home', { techs, project });
     res.render('pages/home');
   } catch (error) {
-    res.render('error', { error: error.message });
+    // res.render('error', { error: error.message });
+    res.json("error")
   }
 });
-
+/*
 router.get('/proyectos', async (req, res) => {
   try {
     const projects = await getProjects();
@@ -55,4 +56,5 @@ router.get('/proyecto/:id', verifyId, async (req, res) => {
     res.render('error', { error: error.message });
   }
 });
+*/
 module.exports = router;
