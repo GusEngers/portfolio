@@ -11,10 +11,11 @@ router.get('/', async (req, res) => {
     //   getHomeProject(),
     // ]);
     // res.render('home', { techs, project });
-    res.render('pages/home');
+    const techs = await getHomeTechs();
+    res.render('pages/home', { techs });
   } catch (error) {
     // res.render('error', { error: error.message });
-    res.json("error")
+    res.json('error');
   }
 });
 /*

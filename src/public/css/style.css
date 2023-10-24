@@ -6,8 +6,10 @@
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
-  --bg-color: #fcfcfc;
-  --primary-color: #4756df;
+  --bg-color: #272727;
+  --bg-color-secondary: #000;
+  --text-color: #fff;
+  --primary-color: #0bffde;
   --secondary-color: #ff7235;
   --primary-shadow: #8b8eaf;
   --secondary-shadow: #a17a69;
@@ -24,6 +26,8 @@ html {
 
 body {
   font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 a {
@@ -51,7 +55,7 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem 3.5rem;
-  background-color: var(--bg-color);
+  background-color: var(--bg-color-secondary);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -89,4 +93,64 @@ a:hover {
 
 .nav-button-icon {
   color: var(--primary-color);
+}
+
+/* -- Home Page -- */
+.home-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+  margin: auto;
+}
+
+.home-main h1 {
+  color: var(--primary-color);
+  font-size: 5rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.home-main h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.home-main-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.home-main-div-icon {
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--text-color);
+}
+
+.home-main-button {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.home-main-button:hover {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
 }
