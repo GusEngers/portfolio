@@ -1,57 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Gustavo Engers - Inicio</title>
-    <%- include('../utils/styles') %>
-    <style>
-      main {
-        width: 100%;
-        min-height: 90vh;
-      }
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('../utils/head') %>
+  <%- include('../utils/styles') %>
+  <title>GusEngers | Desarrollador Web</title>
+</head>
+<body>
+  <%# -- Global Navbar -- %>
+  <%- include('../components/navbar') %>
 
-      section {
-        width: 100%;
-        height: 90vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-image: url('/public/img/fondo.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-      }
+  <%# -- Main Home -- %>
+  <main class="home-main">
+    <h1>Gustavo Engers</h1>
+    <h2>Desarrollador Web</h2>
+    <div class="home-main-div">
+      <% for(let tech of techs) { %>
+        <iconify-icon icon="<%= tech.icon %>" class="home-main-div-icon"></iconify-icon>
+      <% } %>
+    </div>
+    <a href="/proyectos" type="button" class="home-main-button">Mis Proyectos</a>
+  </main>
 
-      h1 {
-        font-size: 5rem;
-        color: #05f5d9;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        text-transform: uppercase;
-      }
+  <%# -- Global Footer -- %>
+  <%- include('../components/footer') %>
 
-      h2 {
-        font-size: 2rem;
-        text-transform: uppercase;
-      }
-    </style>
-  </head>
-  <body>
-    <%- include('../components/navbar') %>
-    <main>
-      <section>
-        <h1>Gustavo Engers</h1>
-        <h2>Desarrollador Web</h2>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum in dolores rerum, ab repellat, inventore,
-          et cum eos provident ex sit modi vero alias! Architecto culpa soluta amet inventore eaque!
-        </p>
-      </section>
-    </main>
-  </body>
+  <%# -- Global Scripts -- %>
+  <%- include('../utils/scripts') %>
+</body>
 </html>

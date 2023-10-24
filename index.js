@@ -1,10 +1,10 @@
 const app = require('./src/app');
-// const db = require('./src/config/db');
+const db = require('./src/config/db');
 require('dotenv').config();
 
 async function main() {
   try {
-    // await db();
+    await db();
     app.listen(process.env.PORT, () => {
       console.log('[INFO] Server listening on Port:', process.env.PORT);
     });
