@@ -139,6 +139,10 @@ a:hover {
   box-shadow: 0 3px 10px var(--secondary-shadow);
 }
 
+.home-main-div-icon:hover {
+  background-color: var(--secondary-color);
+}
+
 .home-main-button {
   padding: 0.5rem;
   margin: 0.5rem;
