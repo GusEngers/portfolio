@@ -136,6 +136,7 @@ a:hover {
   margin: 0.5rem;
   border-radius: 50%;
   background-color: var(--text-color);
+  box-shadow: 0 3px 10px var(--secondary-shadow);
 }
 
 .home-main-button {
@@ -147,6 +148,7 @@ a:hover {
   color: var(--primary-color);
   text-transform: uppercase;
   transition: var(--transition);
+  box-shadow: 0 3px 10px var(--secondary-shadow);
 }
 
 .home-main-button:hover {
