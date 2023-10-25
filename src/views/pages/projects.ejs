@@ -20,7 +20,9 @@
 
     <section class="projects-section">
       <% if (projects) { %>
-        
+        <% for(let project of projects) { %>
+          <%- include('../components/card', {id: project._id, image: project.avatar.path, name: project.name, description: project.description, github: project.github, deploy: project.deploy, docs: project.docs}) %>
+        <% } %>
       <% } else { %>
         <p>¡Lo Siento! Parece que no hay este tipo de proyectos</p>
       <% } %>

@@ -16,8 +16,8 @@ router.get('/', async (req, res) => {
 
 router.get('/proyectos', async (req, res) => {
   try {
-    // const projects = await getProjects();
-    res.render('pages/projects', { title: 'todos los proyectos' });
+    const projects = await getProjects();
+    res.render('pages/projects', { title: 'todos los proyectos', projects });
   } catch (error) {
     // res.render('error', { error: error.message });
     res.json("error")
