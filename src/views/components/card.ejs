@@ -1,43 +1,49 @@
 <article class="card">
-  <img src="<%= image %>" alt="<%= name %>">
-  <h3><%= name %></h3>
-  <p><%= description %></p>
-  <a
-    title="Más información del proyecto"
-    href="/proyecto/<%= id %>"
-  >Más Información</a>
-  
-  <div>
+  <img src="<%= image %>" alt="<%= name %>" loading="lazy">
+
+  <div class="card-info">
+    <h3><%= name %></h3>
+    <p><%= description %></p>
     <a
-      title="Ver repositorio del proyecto"
-      href="<%= github %>"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <iconify-icon icon="devicon:github"></iconify-icon>
-    </a>
-
-    <% if (deploy) { %>
+      title="Más información del proyecto"
+      href="/proyecto/<%= id %>"
+    >Más Información</a>
+    
+    <div>
       <a
-        title="Ver sitio web del proyecto"
-        href="<%= deploy %>"
+        title="Ver repositorio del proyecto"
+        href="<%= github %>"
         target="_blank"
         rel="noopener noreferrer"
+        class="card-icon"
       >
-        <iconify-icon icon="mdi:web"></iconify-icon>
+        <iconify-icon icon="mdi:github"></iconify-icon>
       </a>
-    <% } %>
-
-    <% if (docs) { %>
-      <a
-        title="Ver documentación del proyecto"
-        href="<%= docs %>"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <iconify-icon icon="iconoir:google-docs"></iconify-icon>
-      </a>
-    <% } %>
-
+  
+      <% if (deploy) { %>
+        <a
+          title="Ver sitio web del proyecto"
+          href="<%= deploy %>"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card-icon"
+        >
+          <iconify-icon icon="mdi:web"></iconify-icon>
+        </a>
+      <% } %>
+  
+      <% if (docs) { %>
+        <a
+          title="Ver documentación del proyecto"
+          href="<%= docs %>"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card-icon"
+        >
+          <iconify-icon icon="iconoir:google-docs"></iconify-icon>
+        </a>
+      <% } %>
+  
+    </div>
   </div>
 </article>

@@ -260,17 +260,36 @@ a:hover {
 
 /* -- Project Card -- */
 .card {
-  background-color: #fff;
-  color: #000;
+  background-color: var(--bg-color-secondary);
   margin: 20px;
   width: 70vw;
+  height: 30vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  box-shadow: 0 3px 10px var(--primary-shadow);
 }
 
 .card img {
-  width: 70%;
-  height: 30%;
+  width: 40%;
+  height: 100%;
+}
+
+.card-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  min-height: 100%;
+}
+
+.card-icon {
+  color: #fff;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.card-icon:hover {
+  color: var(--secondary-color);
 }
