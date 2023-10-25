@@ -20,20 +20,22 @@ router.get('/proyectos', async (req, res) => {
     res.render('pages/projects', { title: 'todos los proyectos', projects });
   } catch (error) {
     // res.render('error', { error: error.message });
-    res.json("error")
+    res.json('error');
   }
 });
-/*
+
 router.get('/proyectos/:type', verifyType, async (req, res) => {
   try {
     const { type } = req.params;
     const projects = await getProjects(type);
-    res.render('projects', { projects });
+    const title = type === 'otros' ? `${type} proyectos` : `todos los proyectos ${type}`;
+    res.render('pages/projects', { title, projects });
   } catch (error) {
     res.render('error', { error: error.message });
   }
 });
 
+/*
 router.get('/proyecto/:id', verifyId, async (req, res) => {
   try {
     const project = await getProject(req.params.id);

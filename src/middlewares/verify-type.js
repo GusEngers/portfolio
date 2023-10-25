@@ -12,7 +12,8 @@ module.exports = {
   },
   verifyType: (req, res, next) => {
     if (!TYPES.includes(req.params.type)) {
-      return res.render('not-found');
+      // return res.render('not-found');
+      return res.json("pagina no valida")
     }
     next();
   },
