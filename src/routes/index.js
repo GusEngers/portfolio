@@ -35,25 +35,24 @@ router.get('/proyectos/:type', verifyType, async (req, res) => {
   }
 });
 
-/*
+
 router.get('/proyecto/:id', verifyId, async (req, res) => {
   try {
     const project = await getProject(req.params.id);
     if (!project) {
-      return res.render('project', {
-        title: 'GusEngers - Proyecto no encontrado',
-        project: null,
-        msg: 'El proyecto que está buscando no existe',
+      return res.render('pages/project', {
+        title: 'Proyecto no encontrado',
+        project: null
       });
     }
-    return res.render('project', {
-      title: `GusEngers - ${project.name}`,
+    return res.render('pages/project', {
+      title: project.name,
       project,
-      msg: null,
     });
   } catch (error) {
-    res.render('error', { error: error.message });
+    // res.render('error', { error: error.message });
+    res.json("error")
   }
 });
-*/
+
 module.exports = router;

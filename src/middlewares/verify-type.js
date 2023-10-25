@@ -4,9 +4,10 @@ const { TYPES } = require('../utils/constants');
 module.exports = {
   verifyId: (req, res, next) => {
     if (!isObjectIdOrHexString(req.params.id)) {
-      return res.render('error', {
-        error: 'El id proporcionado no tiene un formato válido',
-      });
+      // return res.render('error', {
+      //   error: 'El id proporcionado no tiene un formato válido',
+      // });
+      res.json("id no valido")
     }
     next();
   },

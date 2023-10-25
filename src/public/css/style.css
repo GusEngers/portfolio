@@ -293,3 +293,100 @@ a:hover {
 .card-icon:hover {
   color: var(--secondary-color);
 }
+
+/* -- Project Page -- */
+.project-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 75vh;
+  margin: auto;
+}
+
+.project-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+}
+
+.project-not-found div {
+  padding: 1rem;
+}
+
+.project-not-found div a {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  min-width: 10rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  transition: var(--transition);
+  box-shadow: 0 3px 10px var(--secondary-shadow);
+}
+
+.project-not-found div a:hover {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.project-main img {
+  width: 70%;
+}
+
+.project-main section {
+  margin: 0.5rem 0;
+  width: 70%;
+}
+
+.project-main h1 {
+  color: var(--primary-color);
+}
+
+.project-main h3 {
+  color: var(--primary-color);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.project-information div {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.project-information p {
+  width: 50%;
+  min-height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.project-information ul {
+  width: 50%;
+  padding: 0 2rem;
+  border-left: 2px solid #fff;
+}
+
+.project-paths div {
+  margin-top: 0.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-images img {
+  width: 100%;
+  margin: 0.5rem 0;
+  box-shadow: 0 3px 10px var(--primary-shadow);
+}
