@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('../utils/head') %>
+  <%- include('../utils/styles') %>
+  <title>GusEngers | Proyectos</title>
+</head>
+<body>
+  <%# -- Global Navbar -- %>
+  <%- include('../components/navbar') %>
+
+  <%# -- Filterbar -- %>
+  <%- include('../components/filterbar') %>
+
+  <%# -- Main Projects -- %>
+  <main class="projects-main">
+    <h1>Estas viendo <%= title %></h1>
+
+    <section class="projects-section">
+      <% if (projects) { %>
+        
+      <% } else { %>
+        <p>¡Lo Siento! Parece que no hay este tipo de proyectos</p>
+      <% } %>
+    </section>
+  </main>
+
+  <%# -- Global Footer -- %>
+  <%- include('../components/footer') %>
+
+  <%# -- Global Scripts -- %>
+  <%- include('../utils/scripts') %>
+</body>
+</html>

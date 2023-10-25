@@ -1,4 +1,4 @@
-const { getHomeTechs, getHomeProject } = require('../controllers/get-home-data');
+const { getHomeTechs } = require('../controllers/get-home-data');
 const { getProject, getProjects } = require('../controllers/get-projects');
 const { verifyId, verifyType } = require('../middlewares/verify-type');
 
@@ -6,11 +6,6 @@ const router = require('express').Router();
 
 router.get('/', async (req, res) => {
   try {
-    // const [techs, project] = await Promise.all([
-    //   getHomeTechs(),
-    //   getHomeProject(),
-    // ]);
-    // res.render('home', { techs, project });
     const techs = await getHomeTechs();
     res.render('pages/home', { techs });
   } catch (error) {
@@ -18,16 +13,17 @@ router.get('/', async (req, res) => {
     res.json('error');
   }
 });
-/*
+
 router.get('/proyectos', async (req, res) => {
   try {
-    const projects = await getProjects();
-    res.render('projects', { projects });
+    // const projects = await getProjects();
+    res.render('pages/projects', { title: 'todos los proyectos' });
   } catch (error) {
-    res.render('error', { error: error.message });
+    // res.render('error', { error: error.message });
+    res.json("error")
   }
 });
-
+/*
 router.get('/proyectos/:type', verifyType, async (req, res) => {
   try {
     const { type } = req.params;

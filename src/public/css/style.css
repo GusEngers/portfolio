@@ -101,6 +101,25 @@ a:hover {
   color: var(--primary-color);
 }
 
+/* -- Filter -- */
+.filterbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3.5rem;
+  background-color: var(--bg-color-secondary);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.filterbar-nav ul {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.9rem;
+}
+
 /* -- Footer -- */
 .footer {
   display: flex;
@@ -223,4 +242,18 @@ a:hover {
   border-color: var(--secondary-color);
   color: var(--secondary-color);
   cursor: pointer;
+}
+
+/* -- Projects Page -- */
+.projects-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 70vh;
+}
+
+.projects-main h1 {
+  color: var(--primary-color);
+  margin: 1.5rem 0;
 }
