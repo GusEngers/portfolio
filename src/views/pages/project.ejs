@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('../utils/head') %>
+  <%- include('../utils/styles') %>
+  <title>GusEngers | <%= title %></title>
+</head>
+<body>
+  <%# -- Global Navbar -- %>
+  <%- include('../components/navbar') %>
+
+  <%# -- Main Project -- %>
+  <main class="project-main">
+    <% if (project === null) { %>
+      <section class="project-not-found">
+        <h1>¡Lo siento! Este proyecto no existe</h1>
+        <div>
+          <a href="/" type="button">Inicio</a>
+          <a href="/proyectos" type="button">Proyectos</a>
+        </div>
+      </section>
+    <% } else { %>
+      <img src="<%= project.avatar.path %>" alt="<%= project.name %>" />
+      <h1><%= project.name %></h1>
+      <h3><%= project.type %></h3>
+
+      <section class="project-information">
+        <h3>Información del Proyecto</h3>
+        <div>
+          <p><%= project.description %></p>
+          <ul>
+            <% for(let task of project.tasks) { %>
+              <li><%= task %></li>
+            <% } %>
+          </ul>
+        </div>
+        <div class="home-main-div">
+          <% for(let tech of project.techs) { %>
+            <iconify-icon
+              title="<%= tech.name %>"
+              icon="<%= tech.icon %>"
+              class="home-main-div-icon">
+            </iconify-icon>
+          <% } %>
+        </div>
+      </section>
+
+      <section class="project-paths">
+        <h3>Accesos Disponibles</h3>
+
+        <div>
+          <a
+            title="Ver repositorio del proyecto"
+            href="<%= project.github %>"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card-icon"
+          >
+            <iconify-icon icon="mdi:github"></iconify-icon>
+          </a>
+      
+          <% if (project.deploy) { %>
+            <a
+              title="Ver sitio web del proyecto"
+              href="<%= project.deploy %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card-icon"
+            >
+              <iconify-icon icon="mdi:web"></iconify-icon>
+            </a>
+          <% } %>
+      
+          <% if (project.docs) { %>
+            <a
+              title="Ver documentación del proyecto"
+              href="<%= project.docs %>"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card-icon"
+            >
+              <iconify-icon icon="iconoir:google-docs"></iconify-icon>
+            </a>
+          <% } %>
+        </div>
+      </section>
+
+      <% if (!!project.images.length) { %>
+        <section class="project-images">
+          <h3>Imágenes Adicionales</h3>
+            <% for(let image of project.images) { %>
+              <img src="<%= image.path %>" alt="<%= image.originalname %>" />
+            <% } %>
+        </section>
+      <% } %>
+    <% } %>
+  </main>
+
+  <%# -- Global Footer -- %>
+  <%- include('../components/footer') %>
+
+  <%# -- Global Scripts -- %>
+  <%- include('../utils/scripts') %>
+</body>
+</html>

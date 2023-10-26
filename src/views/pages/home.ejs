@@ -17,10 +17,19 @@
     <h2>Desarrollador Web</h2>
     <div class="home-main-div">
       <% for(let tech of techs) { %>
-        <iconify-icon icon="<%= tech.icon %>" class="home-main-div-icon"></iconify-icon>
+        <iconify-icon
+          title="<%= tech.name %>"
+          icon="<%= tech.icon %>"
+          class="home-main-div-icon">
+        </iconify-icon>
       <% } %>
     </div>
-    <a href="/proyectos" type="button" class="home-main-button">Mis Proyectos</a>
+    <a
+      title="Ver mis proyectos"
+      href="/proyectos"
+      type="button"
+      class="home-main-button"
+    >Mis Proyectos</a>
   </main>
 
   <%# -- Global Footer -- %>

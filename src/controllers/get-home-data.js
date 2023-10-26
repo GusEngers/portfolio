@@ -15,17 +15,4 @@ module.exports = {
       throw error;
     }
   },
-  /**
-   * Obtiene el proyecto destacado que se mostrará en
-   * la página principal del portfolio
-   * @returns Project
-   */
-  getHomeProject: async () => {
-    try {
-      const project = await Project.findOne({ favorite: true });
-      return project;
-    } catch (error) {
-      throw error;
-    }
-  },
 };
