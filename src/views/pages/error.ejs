@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('../utils/head') %>
+  <%- include('../utils/styles') %>
+  <title>GusEngers | Desarrollador Web</title>
+</head>
+<body>
+  <%# -- Global Navbar -- %>
+  <%- include('../components/navbar') %>
+
+  <%# -- Main Error -- %>
+  <main class="project-main">
+    <section class="project-not-found">
+      <h1>¡Lo siento! Ha ocurrido un error</h1>
+      <p><%= error %></p>
+      <div>
+        <a href="/" type="button">Inicio</a>
+        <a href="/proyectos" type="button">Proyectos</a>
+      </div>
+    </section>
+  </main>
+
+  <%# -- Global Footer -- %>
+  <%- include('../components/footer') %>
+
+  <%# -- Global Scripts -- %>
+  <%- include('../utils/scripts') %>
+</body>
+</html>

@@ -9,8 +9,7 @@ router.get('/', async (req, res) => {
     const techs = await getHomeTechs();
     res.render('pages/home', { techs });
   } catch (error) {
-    // res.render('error', { error: error.message });
-    res.json('error');
+    res.render('pages/error', { error: error.message });
   }
 });
 
@@ -19,8 +18,7 @@ router.get('/proyectos', async (req, res) => {
     const projects = await getProjects();
     res.render('pages/projects', { title: 'todos los proyectos', projects });
   } catch (error) {
-    // res.render('error', { error: error.message });
-    res.json('error');
+    res.render('pages/error', { error: error.message });
   }
 });
 
@@ -31,7 +29,7 @@ router.get('/proyectos/:type', verifyType, async (req, res) => {
     const title = type === 'otros' ? `${type} proyectos` : `todos los proyectos ${type}`;
     res.render('pages/projects', { title, projects });
   } catch (error) {
-    res.render('error', { error: error.message });
+    res.render('pages/error', { error: error.message });
   }
 });
 
@@ -50,8 +48,7 @@ router.get('/proyecto/:id', verifyId, async (req, res) => {
       project,
     });
   } catch (error) {
-    // res.render('error', { error: error.message });
-    res.json("error")
+    res.render('pages/error', { error: error.message });
   }
 });
 

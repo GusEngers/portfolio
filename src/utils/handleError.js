@@ -1,3 +1,3 @@
 module.exports = (err, req, res, next) => {
-  res.render('error', { error: err.message });
+  res.render('pages/error', { error: err.message });
 };
