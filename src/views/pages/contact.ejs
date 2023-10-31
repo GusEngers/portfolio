@@ -14,12 +14,26 @@
   <%# -- Main Contact -- %>
   <main class="project-main">
     <section>
-      <h1>Soy Gustavo Engers</h1>
-      <p>Full-Stack Developer con especialización en desarrollo Back-End, enfocado en la construcción de API web siguiendo los estándares de arquitectura RESTful y usando como stack tecnológico principal a Node.js como entorno de ejecución de Javascript, Express como framework para un desarrollo ágil de API web y MongoDB como Base de Datos. Competente para desarrollo de interfaces de usuario, con React o Angular para renderizados desde el lado del cliente y EJS para renderizados desde el servidor. Con influencia, adaptabilidad, resolución de problemas y responsabilidad.</p>
-      <a href="/public/cv.pdf" target="_blank" rel="noopener noreferrer">Descargar CV</a>
+      <h1>¡Contáctame!</h1>
+      <ul>
+        <li>G-Mail</li>
+        <li>Calendly</li>
+      </ul>
     </section>
     <section>
-      <h2>Tecnologías</h2>
+      <form action="/contact" method="post">
+        <div>
+          <label for="name">Nombre</label>
+          <input type="text" name="name" id="name" />
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+        </div>
+        <div>
+          <label for="body">Mensaje</label>
+          <textarea name="body" id="body" cols="30" rows="10"></textarea>
+          <input type="submit" value="ENVIAR" />
+        </div>
+      </form>
     </section>
   </main>
 
