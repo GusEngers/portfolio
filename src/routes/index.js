@@ -33,14 +33,13 @@ router.get('/proyectos/:type', verifyType, async (req, res) => {
   }
 });
 
-
 router.get('/proyecto/:id', verifyId, async (req, res) => {
   try {
     const project = await getProject(req.params.id);
     if (!project) {
       return res.render('pages/project', {
         title: 'Proyecto no encontrado',
-        project: null
+        project: null,
       });
     }
     return res.render('pages/project', {
@@ -52,4 +51,11 @@ router.get('/proyecto/:id', verifyId, async (req, res) => {
   }
 });
 
+router.get('/sobre_mi', async (req, res) => {
+  try {
+    res.render('pages/about-me');
+  } catch (error) {
+    res.render('pages/error', { error: error.message });
+  }
+});
 module.exports = router;
