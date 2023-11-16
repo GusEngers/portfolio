@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%- include('../utils/head') %>
+  <%- include('../utils/styles') %>
+  <title>GusEngers | Sobre Mí</title>
+</head>
+<body>
+  <%# -- Global Navbar -- %>
+  <%- include('../components/navbar') %>
+
+  <%# -- Main About Me -- %>
+  <main class="project-main about-main">
+    <section>
+      <h1>Soy Gustavo Engers</h1>
+      <p><b>Full-Stack Developer</b> con especialización en desarrollo <b>Back-End</b>, enfocado en la construcción de API web siguiendo los estándares de arquitectura <b>RESTful</b> y usando como stack tecnológico principal a: <b>Node.js</b> como entorno de ejecución de <b>Javascript</b>, <b>Express</b> como framework para un desarrollo ágil de API web y <b>MongoDB/Mongoose</b> o <b>PostgreSQL/Sequelize</b> como Base de Datos. Competente para desarrollo de interfaces de usuario, con <b>React</b> o <b>Angular</b> para renderizados desde el lado del cliente y <b>EJS</b> para renderizados desde el servidor. Con influencia, adaptabilidad, resolución de problemas y responsabilidad.</p>
+      <p>Continuo formándome día a día, siempre buscando mejorar mis habilidades como desarrollador y construir aplicaciones de mejor nivel. En este momento me encuentro aprendiendo sobre <b>Programación Orientada a Objetos</b> utilizando <b>Java</b> como lenguaje de programación. Además de mi idioma nativo que es el español, puedo comunicarme también en portugués e interpretar textos en inglés.</p>
+      <a href="/public/cv-gustavo-engers-fullstackdev.pdf" target="_blank" rel="noopener noreferrer" class="home-main-button">Descargar CV</a>
+    </section>
+    <section>
+      <h2>Tecnologías</h2>
+      <div class="home-main-div">
+        <% for(let tech of techs) { %>
+          <iconify-icon
+            title="<%= tech.name %>"
+            icon="<%= tech.icon %>"
+            class="home-main-div-icon">
+          </iconify-icon>
+        <% } %>
+      </div>
+    </section>
+  </main>
+
+  <%# -- Global Footer -- %>
+  <%- include('../components/footer') %>
+
+  <%# -- Global Scripts -- %>
+  <%- include('../utils/scripts') %>
+</body>
+</html>

@@ -1,4 +1,4 @@
-const { getHomeTechs } = require('../controllers/get-home-data');
+const { getHomeTechs, getTechs } = require('../controllers/get-home-data');
 const { getProject, getProjects } = require('../controllers/get-projects');
 const { verifyId, verifyType } = require('../middlewares/verify-type');
 
@@ -33,14 +33,13 @@ router.get('/proyectos/:type', verifyType, async (req, res) => {
   }
 });
 
-
 router.get('/proyecto/:id', verifyId, async (req, res) => {
   try {
     const project = await getProject(req.params.id);
     if (!project) {
       return res.render('pages/project', {
         title: 'Proyecto no encontrado',
-        project: null
+        project: null,
       });
     }
     return res.render('pages/project', {
@@ -52,4 +51,16 @@ router.get('/proyecto/:id', verifyId, async (req, res) => {
   }
 });
 
+router.get('/sobre_mi', async (req, res) => {
+  try {
+    const techs = await getTechs();
+    res.render('pages/about-me', { techs });
+  } catch (error) {
+    res.render('pages/error', { error: error.message });
+  }
+});
+
+router.route('/contacto').get((req, res) => {
+  res.render('pages/contact');
+});
 module.exports = router;
