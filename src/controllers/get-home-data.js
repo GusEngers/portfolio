@@ -15,4 +15,12 @@ module.exports = {
       throw error;
     }
   },
+  getTechs: async () => {
+    try {
+      const techs = await Tech.find({});
+      return techs;
+    } catch (error) {
+      throw error;
+    }
+  }
 };

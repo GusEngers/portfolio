@@ -1,4 +1,4 @@
-const { getHomeTechs } = require('../controllers/get-home-data');
+const { getHomeTechs, getTechs } = require('../controllers/get-home-data');
 const { getProject, getProjects } = require('../controllers/get-projects');
 const { verifyId, verifyType } = require('../middlewares/verify-type');
 
@@ -53,7 +53,8 @@ router.get('/proyecto/:id', verifyId, async (req, res) => {
 
 router.get('/sobre_mi', async (req, res) => {
   try {
-    res.render('pages/about-me');
+    const techs = await getTechs();
+    res.render('pages/about-me', { techs });
   } catch (error) {
     res.render('pages/error', { error: error.message });
   }

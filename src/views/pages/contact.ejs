@@ -12,14 +12,17 @@
   <%- include('../components/navbar') %>
 
   <%# -- Main Contact -- %>
-  <main class="project-main">
+  <main class="project-main about-main">
     <section>
       <h1>¡Contáctame!</h1>
-      <ul>
-        <li>G-Mail</li>
-        <li>Calendly</li>
-      </ul>
+      <p class="p-contact">Puedes contactarme a través de las siguientes opciones</p>
+      <div class="contact-options">
+        <div><iconify-icon icon="logos:google-gmail" class="icon-contact"></iconify-icon><a href="mailto:gustavoengers6441@gmail.com">Enviándome un Email</a></div>
+        <div><iconify-icon icon="logos:whatsapp-icon" class="icon-contact"></iconify-icon><span>+54 9 3754-499497</span></div>
+      </div>
+      <p class="p-info">¡Próximamente habrá un formulario para enviar correos desde aqui!</p>
     </section>
+    <%#  
     <section>
       <form action="/contact" method="post">
         <div>
@@ -35,6 +38,7 @@
         </div>
       </form>
     </section>
+    %>
   </main>
 
   <%# -- Global Footer -- %>
