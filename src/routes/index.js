@@ -1,18 +1,24 @@
-const { getHomeTechs, getTechs } = require('../controllers/get-home-data');
-const { getProject, getProjects } = require('../controllers/get-projects');
-const { verifyId, verifyType } = require('../middlewares/verify-type');
+// const { getHomeTechs, getTechs } = require('../controllers/get-home-data');
+// const { getProject, getProjects } = require('../controllers/get-projects');
+// const { verifyId, verifyType } = require('../middlewares/verify-type');
 
 const router = require('express').Router();
 
 router.get('/', async (req, res) => {
   try {
-    const techs = await getHomeTechs();
+    // const techs = await getHomeTechs();
+    const techs = [
+      { name: 'Javascript', icon: 'logos:javascript' },
+      { name: 'Javascript', icon: 'logos:javascript' },
+      { name: 'Javascript', icon: 'logos:javascript' },
+      { name: 'Javascript', icon: 'logos:javascript' },
+    ];
     res.render('pages/home', { techs });
   } catch (error) {
     res.render('pages/error', { error: error.message });
   }
 });
-
+/*
 router.get('/proyectos', async (req, res) => {
   try {
     const projects = await getProjects();
@@ -62,5 +68,6 @@ router.get('/sobre_mi', async (req, res) => {
 
 router.route('/contacto').get((req, res) => {
   res.render('pages/contact');
-});
+});*/
+
 module.exports = router;
