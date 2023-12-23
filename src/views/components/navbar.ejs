@@ -1,11 +1,37 @@
-<header>
-  <button type="button" title="Navegación" id="header-button">
-    <iconify-icon id="header-button-icon" icon="charm:menu-hamburger"></iconify-icon>
-  </button>
-  <nav id="nav-bar" class="collapse-off">
-    <a href="/" title="Ir a Inicio" class="nav-link">Inicio</a>
-    <a href="/proyectos" title="Ir a Proyectos" class="nav-link">Proyectos</a>
-    <a href="/sobre_mi" title="Ir a Sobre Mí" class="nav-link">Sobre Mí</a>
-    <a href="/contacto" title="Ir a Contacto" class="nav-link">Contacto</a>
-  </nav>
-</header>
+<% if (filter) { %>
+  <header id="nav-with-filter">
+    <button type="button" title="Navegación" id="header-button">
+      <iconify-icon id="header-button-icon" icon="charm:menu-hamburger"></iconify-icon>
+    </button>
+    <nav id="nav-bar" class="collapse-off">
+      <a href="/" title="Ir a Inicio" class="nav-link">Inicio</a>
+      <a href="/proyectos" title="Ir a Proyectos" class="nav-link">Proyectos</a>
+      <a href="/sobre_mi" title="Ir a Sobre Mí" class="nav-link">Sobre Mí</a>
+      <a href="/contacto" title="Ir a Contacto" class="nav-link">Contacto</a>
+    </nav>
+    <div id="filter-header">
+      <button type="button" id="filter-header-button" title="Filtros">
+        <iconify-icon id="filter-header-button-icon" icon="tabler:filter-plus"></iconify-icon>
+      </button>
+      <nav id="filter-bar" class="collapse-off">
+        <a title="Ir a Todos los Proyectos" href="/proyectos" class="nav-link">Todos</a>
+        <a title="Ir a Proyectos Full-Stack" href="/proyectos/full-stack" class="nav-link">Full-Stack</a>
+        <a title="Ir a Proyectos Back-End" href="/proyectos/back-end" class="nav-link">Back-End</a>
+        <a title="Ir a Proyectos Front-End" href="/proyectos/front-end" class="nav-link">Front-End</a>
+        <a title="Ir a Otros Proyectos" href="/proyectos/otros" class="nav-link">Otros</a>
+      </nav>
+    </div>
+  </header> 
+<% } else { %>
+  <header>
+    <button type="button" title="Navegación" id="header-button">
+      <iconify-icon id="header-button-icon" icon="charm:menu-hamburger"></iconify-icon>
+    </button>
+    <nav id="nav-bar" class="collapse-off">
+      <a href="/" title="Ir a Inicio" class="nav-link">Inicio</a>
+      <a href="/proyectos" title="Ir a Proyectos" class="nav-link">Proyectos</a>
+      <a href="/sobre_mi" title="Ir a Sobre Mí" class="nav-link">Sobre Mí</a>
+      <a href="/contacto" title="Ir a Contacto" class="nav-link">Contacto</a>
+    </nav>
+  </header> 
+<% } %>

@@ -6,7 +6,22 @@ header {
   position: fixed;
 }
 
-#header-button {
+#nav-with-filter {
+  width: 100%;
+  background-color: var(--bg-color-1);
+  text-align: right;
+  height: calc((var(--text-size-subtitle) + 1.35rem + 1.35rem) + (var(--text-size-subtitle) + 0.35rem + 0.35rem)) !important;
+  position: fixed;
+}
+
+#filter-header {
+  width: 100%;
+  background-color: var(--bg-color-1);
+  text-align: center;
+  height: calc(var(--text-size-subtitle) + 0.35rem + 0.35rem);
+}
+
+#header-button, #filter-header-button {
   display: none;
 }
 
@@ -20,12 +35,24 @@ header {
   padding-right: 1rem;
 }
 
+#filter-bar {
+  height: 100%;
+  border: 1px solid transparent;
+}
+
+#nav-bar > .nav-link {
+  margin: 1.35rem;
+}
+
+#filter-bar > .nav-link {
+  margin: 0 1rem;
+}
+
 .nav-link {
   font-size: var(--text-size-normal);
   color: var(--text-color-1);
   text-decoration: none;
   border: 1px solid transparent;
-  margin: 1.35rem;
   display: inline-block;
 }
 
@@ -41,7 +68,16 @@ header {
     height: calc(var(--text-size-subtitle) + 0.35rem + 0.35rem);
   }
 
-  #header-button {
+  #nav-with-filter {
+    height: calc((var(--text-size-subtitle) + 0.35rem + 0.35rem) * 2) !important;
+  }
+
+  #filter-header {
+    height: calc(var(--text-size-subtitle) + 0.35rem + 0.35rem);
+    text-align: right;
+  }
+
+  #header-button, #filter-header-button {
     display: inline-block;
     margin: 0.35rem;
     padding: 0;
@@ -51,20 +87,28 @@ header {
     color: var(--text-color-2);
   }
 
-  #header-button:hover {
+  #header-button:hover, #filter-header-button:hover {
     color: var(--text-color-2-hover);
     cursor: pointer;
   }
 
-  #header-button-icon {
+  #header-button-icon, #filter-header-button-icon {
     vertical-align: middle;
     font-size: var(--text-size-subtitle);
   }
 
-  #nav-bar {
+  #nav-bar, #filter-bar {
     border: none;
     padding: 0;
     height: auto;
+  }
+
+  #nav-bar > .nav-link {
+    margin: 0;
+  }
+
+  #filter-bar > .nav-link {
+    margin: 0;
   }
 
   .collapse-on {
