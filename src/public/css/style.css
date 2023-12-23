@@ -67,6 +67,7 @@ main {
   border: 2px solid var(--text-color-1);
   border-radius: 5px;
   text-decoration: none;
+  text-align: center;
   color: var(--text-color-1);
   text-transform: uppercase;
   font-size: var(--text-size-normal);
@@ -132,46 +133,30 @@ main {
   justify-content: flex-start;
 }
 
-#projects-main > h1 {
+#projects-main h1 {
   font-size: var(--text-size-title);
   text-align: center;
   text-wrap: wrap;
 }
 
-/* -- Project Card -- */
-.card {
-  background-color: var(--bg-color-secondary);
-  margin: 20px;
-  width: 70vw;
-  height: 30vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  box-shadow: 0 3px 10px var(--primary-shadow);
+#projects-section > .big-button {
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.card img {
-  width: 40%;
-  height: 100%;
+#not-projects-subtitle {
+  font-size: var(--text-size-subtitle);
 }
 
-.card-info {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 60%;
-  min-height: 100%;
+#not-projects-info {
+  font-size: var(--text-size-normal);
 }
 
-.card-icon {
-  color: #fff;
-  font-size: 2rem;
-  margin-right: 1rem;
-}
-
-.card-icon:hover {
-  color: var(--secondary-color);
+#not-projects-subtitle, #not-projects-info {
+  text-align: center;
+  text-wrap: wrap;
 }
 
 /* -- Project Page -- */

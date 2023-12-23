@@ -119,6 +119,10 @@ header {
     animation-duration: 0.5s;
   }
 
+  #nav-with-filter > .collapse-on {
+    background-color: var(--bg-color-1) !important;
+  }
+
   .collapse-on > a {
     font-size: var(--text-size-normal);
     color: var(--text-color-2);
