@@ -12,10 +12,10 @@ module.exports = {
   getProjects: async (type = undefined) => {
     try {
       if (!type) {
-        const projects = await Project.find({}).lean();
+        const projects = await Project.find({}).sort({ favorite: -1, _id: -1 }).lean();
         return projects;
       }
-      const projects = await Project.find({ type }).lean();
+      const projects = await Project.find({ type }).sort({ favorite: -1, _id: -1 }).lean();
       return projects;
     } catch (error) {
       throw error;

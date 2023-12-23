@@ -21,7 +21,7 @@ router.get('/proyectos', async (req, res) => {
     res.render('pages/error', { error: error.message });
   }
 });
-/*
+
 router.get('/proyectos/:type', verifyType, async (req, res) => {
   try {
     const { type } = req.params;
@@ -32,7 +32,7 @@ router.get('/proyectos/:type', verifyType, async (req, res) => {
     res.render('pages/error', { error: error.message });
   }
 });
-
+/*
 router.get('/proyecto/:id', verifyId, async (req, res) => {
   try {
     const project = await getProject(req.params.id);

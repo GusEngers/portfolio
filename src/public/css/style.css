@@ -13,6 +13,7 @@
   --text-size-title: 2.5rem;
   --text-size-subtitle: 2rem;
   --text-size-normal: 1.5rem;
+  --text-size-description: 1.20rem;
   --text-size-small: 1rem;
   --font-family: 'Roboto', sans-serf;
   --normal-font: 400;
@@ -28,12 +29,8 @@
   --transition: 0.3s;
 }
 
-main {
-  margin-top: calc(var(--text-size-subtitle) + 1.35rem + 1.35rem);
-  width: 100%;
-  max-width: 1080px;
-  margin-left: auto;
-  margin-right: auto;
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -50,8 +47,18 @@ body {
   padding: 0;
 }
 
-* {
-  box-sizing: border-box;
+main {
+  width: 100%;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#home-main, #projects-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 75vh;
 }
 
 .big-button {
@@ -75,11 +82,8 @@ body {
 
 /* -- Home Page -- */
 #home-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: calc(var(--text-size-subtitle) + 1.35rem + 1.35rem);
   justify-content: center;
-  min-height: 75vh;
 }
 
 #home-main > h1, #home-main > h2 {
@@ -123,17 +127,15 @@ body {
 }
 
 /* -- Projects Page -- */
-.projects-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#projects-main {
+  margin-top: calc((var(--text-size-subtitle) + 1.35rem + 1.35rem) + (var(--text-size-subtitle) + 2rem + 2rem));
   justify-content: flex-start;
-  min-height: 70vh;
 }
 
-.projects-main h1 {
-  color: var(--primary-color);
-  margin: 1.5rem 0;
+#projects-main > h1 {
+  font-size: var(--text-size-title);
+  text-align: center;
+  text-wrap: wrap;
 }
 
 /* -- Project Card -- */
@@ -329,15 +331,22 @@ body {
 
 @media (max-width: 600px) {
   main {
-    margin-top: calc(var(--text-size-subtitle) + 0.35rem + 0.35rem);
     max-width: 580px;
     min-width: 360px;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
+  
+  #home-main {
+    margin-top: calc(var(--text-size-subtitle) + 0.35rem + 0.35rem);
+  }
 
   #home-icons-container {
     width: 300px;
+  }
+
+  #projects-main {
+    margin-top: calc((var(--text-size-subtitle) + 1.35rem + 1.35rem) + (var(--text-size-subtitle)));
   }
 }
