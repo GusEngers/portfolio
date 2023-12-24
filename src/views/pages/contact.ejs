@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%- include('../utils/head') %>
   <%- include('../utils/styles') %>
   <title>GusEngers | Contacto</title>
 </head>
 <body>
   <%# -- Global Navbar -- %>
-  <%- include('../components/navbar') %>
+  <%- include('../components/navbar', {filter: false}) %>
 
   <%# -- Main Contact -- %>
-  <main class="project-main about-main">
-    <section>
+  <main id="contact-main">
+    <section class="contact-section">
       <h1>¡Contáctame!</h1>
-      <p class="p-contact">Puedes contactarme a través de las siguientes opciones</p>
-      <div class="contact-options">
+      <p>Puedes contactarme a través de las siguientes opciones</p>
+      <div id="contact-methods">
         <div><iconify-icon icon="logos:google-gmail" class="icon-contact"></iconify-icon><a href="mailto:gustavoengers6441@gmail.com">Enviándome un Email</a></div>
         <div><iconify-icon icon="logos:whatsapp-icon" class="icon-contact"></iconify-icon><span>+54 9 3754-499497</span></div>
       </div>
-      <p class="p-info">¡Próximamente habrá un formulario para enviar correos desde aqui!</p>
+      <p class="contact-info">¡Próximamente habrá un formulario para enviar correos desde aqui!</p>
     </section>
     <%#  
     <section>

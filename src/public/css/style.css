@@ -16,17 +16,6 @@
   --text-size-description: 1.2rem;
   --text-size-small: 1rem;
   --font-family: 'Roboto', sans-serf;
-  --normal-font: 400;
-  --bold-font: 700;
-  --bolder-font: 900;
-  --primary-color: #00ffff;
-  --secondary-color: #ff0000;
-  --primary-shadow: #009999;
-  --secondary-shadow: #920000;
-  --bottom-margin: 0.5rem;
-  --bottom-margin-2: 1rem;
-  --line-height: 1.7rem;
-  --transition: 0.3s;
 }
 
 * {
@@ -105,7 +94,7 @@ main {
   text-wrap: wrap;
 }
 
-#home-main, #about-main {
+#home-main, #about-main, #contact-main {
   margin-top: calc(var(--text-size-subtitle) + 1.35rem + 1.35rem);
   justify-content: center;
 }
@@ -269,17 +258,26 @@ main {
   width: 100%;
 }
 
-.p-contact {
-  font-size: 1.5rem;
+/* -- Contact Page -- */
+#contact-main {
+  min-height: 75vh;
+  font-size: var(--text-size-normal);
+  text-align: center;
 }
-.contact-options {
+
+.contact-section > h1 {
+  font-size: var(--text-size-title);
+  color: var(--text-color-1);
+}
+
+.contact-section > div {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
 }
 
-.contact-options div {
+#contact-methods > div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -287,16 +285,24 @@ main {
   margin: 0 1rem;
 }
 
-.contact-options div span {
-  color: var(--primary-color);
+#contact-methods span, #contact-methods a {
+  color: var(--text-color-1);
 }
 
-.p-info {
-  padding: 2rem;
-  border-radius: 25px;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-  background-color: rgba(255, 255, 255, 0.1);
+#contact-methods a:hover {
+  color: var(--text-color-1-hover);
+  cursor: pointer;
+}
+
+.contact-info {
+  margin: 2rem auto 0 auto;
+  padding: 1rem;
+  font-size: var(--text-size-small);
+  width: 50%;
+  border-radius: 5px;
+  color: var(--text-color-1);
+  border: 2px solid var(--text-color-1);
+  background-color: var(--bg-color-3);
 }
 
 .icon-contact {
@@ -315,7 +321,8 @@ main {
 
   #home-main,
   #project-main,
-  #about-main {
+  #about-main,
+  #contact-main {
     margin-top: calc(var(--text-size-subtitle) + 0.35rem + 0.35rem);
   }
 
@@ -388,5 +395,9 @@ main {
 
   .about-section > ul, .about-section > p {
     text-align: left;
+  }
+
+  .contact-info {
+    width: 80%;
   }
 }
