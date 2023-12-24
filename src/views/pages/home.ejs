@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <%- include('../utils/head') %>
-  <%- include('../utils/styles') %>
-  <title>GusEngers | Desarrollador Web</title>
-</head>
-<body>
-  <%# -- Global Navbar -- %>
-  <%- include('../components/navbar', {filter: false}) %>
+  <head>
+    <%- include('../utils/head') %>
+    <%- include('../utils/styles') %>
+    <title>GusEngers | Desarrollador Web</title>
+  </head>
+  <body>
+    <%# -- Global Navbar -- %>
+    <%- include('../components/navbar', {filter: false}) %>
 
-  <%# -- Main Home -- %>
-  
-  <main id="home-main">
-    <h1>Gustavo Engers</h1>
-    <h2>Desarrollador Web</h2>
-    <div id="home-icons-container">
-      <% for(let tech of techs) { %>
-        <iconify-icon
-          title="<%= tech.name %>"
-          icon="<%= tech.icon %>"
-          class="home-icons">
-        </iconify-icon>
-      <% } %>
-    </div>
-    <a
-      title="Ir a Proyectos"
-      href="/proyectos"
-      type="button"
-      class="big-button"
-    >Mis Proyectos</a>
-  </main>
+    <%# -- Main Home -- %>
+    
+    <main id="home-main">
+      <h1>Gustavo Engers</h1>
+      <h2>Desarrollador Web</h2>
+      <div id="home-icons-container">
+        <% for(let tech of techs) { %>
+          <iconify-icon
+            title="<%= tech.name %>"
+            icon="<%= tech.icon %>"
+            class="home-icons">
+          </iconify-icon>
+        <% } %>
+      </div>
+      <a
+        title="Ir a Proyectos"
+        href="/proyectos"
+        type="button"
+        class="big-button"
+      >Mis Proyectos</a>
+    </main>
 
-  <%# -- Global Footer -- %>
-  <%- include('../components/footer') %>
+    <%# -- Global Footer -- %>
+    <%- include('../components/footer') %>
 
-  <%# -- Global Scripts -- %>
-  <%- include('../utils/scripts') %>
-</body>
+    <%# -- Global Scripts -- %>
+    <%- include('../utils/scripts') %>
+  </body>
 </html>

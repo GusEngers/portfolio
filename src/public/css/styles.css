@@ -94,7 +94,11 @@ main {
   text-wrap: wrap;
 }
 
-#home-main, #about-main, #contact-main {
+#home-main,
+#about-main,
+#contact-main,
+#error-main,
+#not-found-main {
   margin-top: calc(var(--text-size-subtitle) + 1.35rem + 1.35rem);
   justify-content: center;
 }
@@ -168,6 +172,8 @@ main {
   width: 100%;
   box-shadow: 0 3px 10px var(--text-color-1-hover);
   margin: 0.5rem 0;
+  height: 450px;
+  object-fit: cover;
 }
 
 #project > #project-title {
@@ -376,7 +382,9 @@ main {
   #home-main,
   #project-main,
   #about-main,
-  #contact-main {
+  #contact-main,
+  #error-main,
+  #not-found-main {
     margin-top: calc(var(--text-size-subtitle) + 0.35rem + 0.35rem);
   }
 
@@ -386,6 +394,11 @@ main {
 
   #projects-main {
     margin-top: calc((var(--text-size-subtitle) + 1.35rem + 1.35rem) + (var(--text-size-subtitle)));
+  }
+
+  #project > img,
+  .project-section > img {
+    height: 250px;
   }
 
   #project > h1 {
