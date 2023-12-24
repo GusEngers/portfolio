@@ -50,7 +50,7 @@ router.get('/proyecto/:id', verifyId, async (req, res) => {
     res.render('pages/error', { error: error.message });
   }
 });
-/*
+
 router.get('/sobre_mi', async (req, res) => {
   try {
     const techs = await getTechs();
@@ -62,6 +62,6 @@ router.get('/sobre_mi', async (req, res) => {
 
 router.route('/contacto').get((req, res) => {
   res.render('pages/contact');
-});*/
+});
 
 module.exports = router;

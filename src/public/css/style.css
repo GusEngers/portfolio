@@ -105,12 +105,12 @@ main {
   text-wrap: wrap;
 }
 
-/* -- Home Page -- */
-#home-main {
+#home-main, #about-main {
   margin-top: calc(var(--text-size-subtitle) + 1.35rem + 1.35rem);
   justify-content: center;
 }
 
+/* -- Home Page -- */
 #home-main > h1,
 #home-main > h2 {
   text-transform: uppercase;
@@ -244,27 +244,29 @@ main {
   cursor: pointer;
 }
 
-/* About Me Page */
-.about-main section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+/* -- About Me Page -- */
+#about-main {
+  font-size: var(--text-size-normal);
 }
 
-.about-main section h1 {
-  text-align: center;
-  font-size: 3rem;
-  margin: 1rem 0;
-}
-
-.about-main section p {
-  margin: 1rem 0;
-}
-
-.about-main section h2 {
-  color: var(--primary-color);
+.about-section > h1 {
+  font-size: var(--text-size-title);
+  color: var(--text-color-1);
   text-transform: uppercase;
+}
+
+.about-section > h2 {
+  font-size: var(--text-size-title);
+  color: var(--text-color-1);
+  text-transform: uppercase;
+}
+
+.about-section b {
+  color: var(--text-color-1);
+}
+
+.about-section > #home-icons-container {
+  width: 100%;
 }
 
 .p-contact {
@@ -312,7 +314,8 @@ main {
   }
 
   #home-main,
-  #project-main {
+  #project-main,
+  #about-main {
     margin-top: calc(var(--text-size-subtitle) + 0.35rem + 0.35rem);
   }
 
@@ -371,5 +374,19 @@ main {
 
   .project-path > span {
     display: none;
+  }
+
+  .about-section > p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .about-section {
+    text-align: center;
+    text-wrap: wrap;
+  }
+
+  .about-section > ul, .about-section > p {
+    text-align: left;
   }
 }

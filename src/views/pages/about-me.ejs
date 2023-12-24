@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%- include('../utils/head') %>
   <%- include('../utils/styles') %>
   <title>GusEngers | Sobre Mí</title>
 </head>
 <body>
   <%# -- Global Navbar -- %>
-  <%- include('../components/navbar') %>
+  <%- include('../components/navbar', {filter: false}) %>
 
   <%# -- Main About Me -- %>
-  <main class="project-main about-main">
-    <section>
+  <main id="about-main">
+    <section class="about-section">
       <h1>Soy Gustavo Engers</h1>
-      <p><b>Full-Stack Developer</b> con especialización en desarrollo <b>Back-End</b>, enfocado en la construcción de API web siguiendo los estándares de arquitectura <b>RESTful</b> y usando como stack tecnológico principal a: <b>Node.js</b> como entorno de ejecución de <b>Javascript</b>, <b>Express</b> como framework para un desarrollo ágil de API web y <b>MongoDB/Mongoose</b> o <b>PostgreSQL/Sequelize</b> como Base de Datos. Competente para desarrollo de interfaces de usuario, con <b>React</b> o <b>Angular</b> para renderizados desde el lado del cliente y <b>EJS</b> para renderizados desde el servidor. Con influencia, adaptabilidad, resolución de problemas y responsabilidad.</p>
-      <p>Continuo formándome día a día, siempre buscando mejorar mis habilidades como desarrollador y construir aplicaciones de mejor nivel. En este momento me encuentro aprendiendo sobre <b>Programación Orientada a Objetos</b> utilizando <b>Java</b> como lenguaje de programación. Además de mi idioma nativo que es el español, puedo comunicarme también en portugués e interpretar textos en inglés.</p>
-      <a href="/public/cv-gustavo-engers-fullstackdev.pdf" target="_blank" rel="noopener noreferrer" class="home-main-button">Descargar CV</a>
+
+      <a href="/public/cv-gustavo-engers-fullstackdev.pdf" target="_blank" rel="noopener noreferrer" class="big-button">Descargar CV</a>
+
+      <p><b>Full-Stack Developer</b> con especialización en desarrollo <b>Back-End</b>, enfocado en la construcción de API web siguiendo los estándares de arquitectura <b>RESTful</b> y usando como stack tecnológico principal a:</p> 
+      <ul>
+        <li><b>Node.js</b> como entorno de ejecución de <b>Javascript</b></li>
+        <li><b>Express</b> como framework para un desarrollo ágil de API web</li>
+        <li><b>MongoDB/Mongoose</b> y <b>PostgreSQL/Sequelize</b> para gestión de Base de Datos</li>
+      </ul>
+      
+      <p>Competente para desarrollo de interfaces de usuario, con:</p>
+      
+      <ul>
+        <li><b>React</b> y <b>Angular</b> para renderizados desde el lado del cliente</li>
+        <li><b>EJS</b> como motor de plantillas para renderizados desde el servidor</li>
+        <li><b>HTML</b>, <b>CSS</b> y <b>Javascript</b> para la construcción de sitios web estáticos</li>
+      </ul>
+
+      <p>Continuo formándome día a día, siempre buscando mejorar mis habilidades como desarrollador y construir aplicaciones de mejor nivel. En este momento me encuentro aprendiendo sobre <b>Programación Orientada a Objetos</b> utilizando <b>Java</b> como lenguaje de programación, y también elevando mis habilidades en <b>HTML</b> y <b>CSS</b>.</p>
+
+      <p>Además de mi idioma nativo que es el Español, puedo comunicarme con un excelente nivel en Portugués y un nivel básico en Inglés (interpretación de textos cortos).</p>
     </section>
-    <section>
+    
+    <section class="about-section">
       <h2>Tecnologías</h2>
-      <div class="home-main-div">
+      <p>Estas son algunas de las tecnologías con las que llegué a trabajar o probar al menos una vez:</p>
+      <div id="home-icons-container">
         <% for(let tech of techs) { %>
           <iconify-icon
             title="<%= tech.name %>"
             icon="<%= tech.icon %>"
-            class="home-main-div-icon">
+            class="home-icons">
           </iconify-icon>
         <% } %>
       </div>
