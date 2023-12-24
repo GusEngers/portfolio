@@ -63,4 +63,5 @@ router.get('/sobre_mi', async (req, res) => {
 router.route('/contacto').get((req, res) => {
   res.render('pages/contact');
 });
+
 module.exports = router;

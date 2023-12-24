@@ -1,4 +1,3 @@
-const Project = require('../models/project');
 const Tech = require('../models/tech');
 
 module.exports = {
@@ -9,7 +8,7 @@ module.exports = {
    */
   getHomeTechs: async () => {
     try {
-      const techs = await Tech.find({ favorite: true });
+      const techs = await Tech.find({ favorite: true }).lean();
       return techs;
     } catch (error) {
       throw error;

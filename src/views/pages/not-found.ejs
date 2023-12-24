@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%- include('../utils/head') %>
-  <%- include('../utils/styles') %>
-  <title>GusEngers | Desarrollador Web</title>
-</head>
-<body>
-  <%# -- Global Navbar -- %>
-  <%- include('../components/navbar') %>
+  <head>
+    <%- include('../utils/head') %>
+    <%- include('../utils/styles') %>
+    <title>GusEngers | Desarrollador Web</title>
+  </head>
+  <body>
+    <%# -- Global Navbar -- %>
+    <%- include('../components/navbar', {filter: false}) %>
 
-  <%# -- Main Not Found -- %>
-  <main class="project-main">
-    <section class="project-not-found">
-      <h1>¡Lo siento! Esta página no existe</h1>
-      <div>
-        <a href="/" type="button">Inicio</a>
-        <a href="/proyectos" type="button">Proyectos</a>
-      </div>
-    </section>
-  </main>
+    <%# -- Main Not Found -- %>
+    <main id="not-found-main">
+      <section>
+        <%- include('../components/section-projects-not-found', {message: "404 - Esta página no existe"}) %>
+      </section>
+    </main>
 
-  <%# -- Global Footer -- %>
-  <%- include('../components/footer') %>
+    <%# -- Global Footer -- %>
+    <%- include('../components/footer') %>
 
-  <%# -- Global Scripts -- %>
-  <%- include('../utils/scripts') %>
-</body>
+    <%# -- Global Scripts -- %>
+    <%- include('../utils/scripts') %>
+  </body>
 </html>
