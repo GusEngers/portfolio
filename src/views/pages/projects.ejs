@@ -18,33 +18,7 @@
           <%- include('../components/card', {id: project._id, image: project.avatar.path, name: project.name, description: project.description, github: project.github, deploy: project.deploy, docs: project.docs}) %>
         <% } %>
       <% } else { %>
-        <h1>¡Lo siento!</h1>
-        <p id="not-projects-subtitle">¡Esta sección está vacía!</p>
-        <p id="not-projects-info">Explora otras opciones:</p>
-        <a
-          title="Ir a Inicio"
-          href="/"
-          type="button"
-          class="big-button"
-        >Inicio</a>
-        <a
-          title="Ir a Proyectos"
-          href="/proyectos"
-          type="button"
-          class="big-button"
-        >Proyectos</a>
-        <a
-          title="Ir a Sobre Mí"
-          href="/sobre_mi"
-          type="button"
-          class="big-button"
-        >Sobre Mí</a>
-        <a
-          title="Ir a Contacto"
-          href="/contacto"
-          type="button"
-          class="big-button"
-        >Contacto</a>
+        <%- include('../components/section-projects-not-found', {message: '¡Esta sección está vacía!'}) %>
       <% } %>
     </section>
   </main>
