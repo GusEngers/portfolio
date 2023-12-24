@@ -256,6 +256,7 @@ main {
 
 .about-section > #home-icons-container {
   width: 100%;
+  margin-bottom: 4rem;
 }
 
 /* -- Contact Page -- */
@@ -308,6 +309,59 @@ main {
 .icon-contact {
   font-size: 1.5rem;
   margin: 0.5rem 0;
+}
+
+/* -- Footer -- */
+#footer {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-color-1);
+}
+
+#footer-icons {
+  width: 100%;
+  text-align: center;
+  font-size: var(--text-size-title);
+  margin: 2rem 0;
+}
+
+#footer-icons > a {
+  color: var(--text-color-2);
+  text-decoration: none;
+  margin: 0 2rem;
+  transition: 0.3s;
+}
+
+#footer-icons > a:hover {
+  cursor: pointer;
+}
+
+#footer-paths > .footer-paths {
+  font-size: var(--text-size-normal);
+}
+
+#footer-paths a {
+  color: var(--text-color-1);
+  text-decoration: none;
+}
+
+#footer-paths a:hover {
+  color: var(--text-color-1-hover);
+}
+
+.footer-paths {
+  display: inline-flex;
+  width: 45%;
+  align-items: center;
+}
+
+.footer-paths:first-child {
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+
+.footer-paths:last-child {
+  margin-left: 2rem;
 }
 
 @media (max-width: 600px) {
@@ -399,5 +453,25 @@ main {
 
   .contact-info {
     width: 80%;
+  }
+
+  .footer-paths {
+    width: 100%;
+    padding-left: 1rem;
+    flex-direction: column;
+  }
+
+  .footer-paths > h3 {
+    margin-bottom: 1rem;
+  }
+
+  .footer-paths > ul {
+    margin-top: 0;
+  }
+
+  .footer-paths:last-child, .footer-paths:first-child {
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
   }
 }
