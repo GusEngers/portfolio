@@ -1,6 +1,8 @@
 const pt = require('express').Router();
 
-pt.route('/').get();
+const { getHomePage } = require('../controllers/pt');
+
+pt.route('/').get(getHomePage);
 
 pt.route('/projects').get();
 

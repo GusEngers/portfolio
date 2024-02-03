@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <%- include('../../utils/head') %>
+    <%- include('../../utils/styles') %>
+    <title>GusEngers | Desenvolvedor Web</title>
+  </head>
+  <body>
+    <%# -- Global Navbar -- %>
+    <%- include('../../components/navbar', { filter: false }) %>
+
+    <%# -- Main Home -- %>
+    
+    <main id="home-main">
+      <h1>Gustavo Engers</h1>
+      <h2>Desenvolvedor Web</h2>
+      <div id="home-icons-container">
+        <% for(let tech of techs) { %>
+          <iconify-icon
+            title="<%= tech.name %>"
+            icon="<%= tech.icon %>"
+            class="home-icons">
+          </iconify-icon>
+        <% } %>
+      </div>
+      <a
+        title="Ir para Projetos"
+        href="/pt/projects"
+        type="button"
+        class="big-button"
+      >Meus Projetos</a>
+    </main>
+
+    <%# -- Global Footer -- %>
+    <%- include('../../components/footer') %>
+
+    <%# -- Global Scripts -- %>
+    <%- include('../../utils/scripts') %>
+  </body>
+</html>
