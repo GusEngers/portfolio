@@ -14,6 +14,9 @@ dependencies:
   express:
     specifier: ^4.18.2
     version: 4.18.2
+  express-cache:
+    specifier: ^0.1.1
+    version: 0.1.1
   mongoose:
     specifier: ^7.5.3
     version: 7.5.3
@@ -292,6 +295,12 @@ packages:
   /etag@1.8.1:
     resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /express-cache@0.1.1:
+    resolution: {integrity: sha512-DZ9b/QMUnlPOEHzQUtI+AVMuDkifZGi80KIpbLY+jhMBPAfTvy8RhMrFBUL3djMO4MZt1dWmlADQEiO9eOHS/w==}
+    dependencies:
+      redis: 0.10.3
     dev: false
 
   /express@4.18.2:
@@ -772,6 +781,10 @@ packages:
     dependencies:
       picomatch: 2.3.1
     dev: true
+
+  /redis@0.10.3:
+    resolution: {integrity: sha512-oVblZDvWa0J03abo+nB4X7XlIlrfp7UF57fQmHe9X7aO5y/aUuxxXOyq8ZdjhMTnto3n9fQXX2flhXU7DP6RYQ==}
+    dev: false
 
   /safe-buffer@5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
