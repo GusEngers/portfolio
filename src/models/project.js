@@ -4,15 +4,29 @@ const { TYPES } = require('../utils/constants');
 const Project = model(
   'project',
   new Schema({
-    name: {
+    name_es: {
       type: String,
       required: true,
     },
-    description: {
+    name_pt: {
       type: String,
       required: true,
     },
-    tasks: [
+    description_es: {
+      type: String,
+      required: true,
+    },
+    description_pt: {
+      type: String,
+      required: true,
+    },
+    tasks_es: [
+      {
+        type: String,
+        required: true,
+      },
+    ],
+    tasks_pt: [
       {
         type: String,
         required: true,
@@ -23,12 +37,12 @@ const Project = model(
       default: false,
     },
     avatar: {
-      type: Schema.Types.Mixed,
+      type: String,
       required: true,
     },
     images: [
       {
-        type: Schema.Types.Mixed,
+        type: String,
       },
     ],
     type: {
