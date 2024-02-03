@@ -1,8 +1,12 @@
 const { connect } = require('mongoose');
-require('dotenv').config();
+const { DB_URI } = require('../utils/constants');
 
+/**
+ * Establece la conexión de la base de datos en la URI especificada
+ */
 async function db() {
   try {
+    if (!DB_URI) throw new Error('URI not found');
     await connect(process.env.DB_URI).then(() => {
       console.log('[INFO] Successfully connected database');
     });
