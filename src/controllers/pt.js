@@ -9,7 +9,7 @@ module.exports = {
   getHomePage: async function (req, res, next) {
     try {
       const techs = await getHomeTechs();
-      res.render('pages/pt/home', { techs });
+      res.render('pt/home', { techs });
     } catch (error) {
       next(error);
     }
