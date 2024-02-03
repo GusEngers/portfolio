@@ -1,5 +1,4 @@
 const express = require('express');
-const cache = require('express-cache');
 const path = require('path');
 const handleCors = require('./utils/handleCors');
 const handleNotFound = require('./utils/handleNotFound');
@@ -10,12 +9,6 @@ const app = express();
 
 app.disable('x-powered-by');
 app.use(express.json());
-app.use(
-  cache({
-    maxAge: 1000 * 60 * 60,
-    cacheControl: true,
-  })
-);
 app.use(require('morgan')('dev'));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
