@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <%- include('../../utils/head') %>
-    <%- include('../../utils/styles') %>
-    <title>GusEngers | Desarrollador Web</title>
+    <%- include('../../utils/head', { lang: 'es', title: 'GusEngers | Desarrollador Web' }) %>
   </head>
   <body>
     <%# -- Global Navbar -- %>
-    <%- include('../../components/navbar', { filter: false }) %>
+    <%- include('../../components/navbar', { lang: 'es', path: '' }) %>
 
     <%# -- Main Home -- %>
     

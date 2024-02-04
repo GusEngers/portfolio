@@ -1,37 +1,79 @@
-<% if (filter) { %>
-  <header id="nav-with-filter">
-    <button type="button" title="Navegación" id="header-button">
-      <iconify-icon id="header-button-icon" icon="charm:menu-hamburger"></iconify-icon>
-    </button>
-    <nav id="nav-bar" class="collapse-off">
-      <a href="/" title="Ir a Inicio" class="nav-link">Inicio</a>
-      <a href="/proyectos" title="Ir a Proyectos" class="nav-link">Proyectos</a>
-      <a href="/sobre_mi" title="Ir a Sobre Mí" class="nav-link">Sobre Mí</a>
-      <a href="/contacto" title="Ir a Contacto" class="nav-link">Contacto</a>
-    </nav>
-    <div id="filter-header">
-      <button type="button" id="filter-header-button" title="Filtros">
-        <iconify-icon id="filter-header-button-icon" icon="tabler:filter-plus"></iconify-icon>
+<% if (lang === 'es') { %>
+  <%# Navbar en español %>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand text-primary" href="/es">GusEngers</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <nav id="filter-bar" class="collapse-off">
-        <a title="Ir a Todos los Proyectos" href="/proyectos" class="nav-link">Todos</a>
-        <a title="Ir a Proyectos Full-Stack" href="/proyectos/full-stack" class="nav-link">Full-Stack</a>
-        <a title="Ir a Proyectos Back-End" href="/proyectos/back-end" class="nav-link">Back-End</a>
-        <a title="Ir a Proyectos Front-End" href="/proyectos/front-end" class="nav-link">Front-End</a>
-        <a title="Ir a Otros Proyectos" href="/proyectos/otros" class="nav-link">Otros</a>
-      </nav>
-    </div>
+  
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <%# Links de navegación %>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active ml-auto">
+            <a class="nav-link" href="/es">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="/es/projects">Proyectos</a>
+          </li>
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="/es/about_me">Sobre Mí</a>
+          </li>
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="/es/contact">Contacto</a>
+          </li>
+
+          <%# Botón para cambio de idioma %>
+          <li class="nav-item dropdown ml-auto">
+            <a class="nav-link dropdown-toggle text-right btn btn-outline-info" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Idioma
+            </a>
+            <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item text-light bg-dark" href="/es/<%= path %>">Español</a>
+              <a class="dropdown-item text-light bg-dark" href="/pt/<%= path %>">Português</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header> 
 <% } else { %>
+  <%# Navbar en portugués %>
   <header>
-    <button type="button" title="Navegación" id="header-button">
-      <iconify-icon id="header-button-icon" icon="charm:menu-hamburger"></iconify-icon>
-    </button>
-    <nav id="nav-bar" class="collapse-off">
-      <a href="/" title="Ir a Inicio" class="nav-link">Inicio</a>
-      <a href="/proyectos" title="Ir a Proyectos" class="nav-link">Proyectos</a>
-      <a href="/sobre_mi" title="Ir a Sobre Mí" class="nav-link">Sobre Mí</a>
-      <a href="/contacto" title="Ir a Contacto" class="nav-link">Contacto</a>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand text-primary" href="/pt">GusEngers</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <%# Links de navegación %>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active ml-auto">
+            <a class="nav-link" href="/pt">Início <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="/pt/projects">Projetos</a>
+          </li>
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="/pt/about_me">Sobre mim</a>
+          </li>
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="/es/contact">Contato</a>
+          </li>
+
+          <%# Botón para cambio de idioma %>
+          <li class="nav-item dropdown ml-auto">
+            <a class="nav-link dropdown-toggle text-right btn btn-outline-info" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Idioma
+            </a>
+            <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item text-light bg-dark" href="/es/<%= path %>">Espanhol</a>
+              <a class="dropdown-item text-light bg-dark" href="/pt/<%= path %>">Português</a>
+            </div>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header> 
 <% } %>

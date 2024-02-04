@@ -1,7 +1,21 @@
+<%# Favicon %>
 <link rel="apple-touch-icon" sizes="180x180" href="/public/favicon/apple-touch-icon.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon/favicon-16x16.png" />
 <link rel="manifest" href="/public/favicon/site.webmanifest" />
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="¡Bienvenidos a mi Portfolio! Explora mis proyectos y obtén más información sobre mí." />
+
+<%# Required meta tags %>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<%# Bootstrap CSS %>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<%# Page Title and Description %>
+<% if (lang === 'es') { %>
+  <meta name="description" content="¡Bienvenidos a mi Portafolio! Explora mis proyectos y obtén más información sobre mí." />
+<% } else { %>
+  <meta name="description" content="¡Bem-vindo ao meu Portfólio! Explore meus projetos e saiba mais sobre mim." />
+<% } %>
+
+<title><%= title %></title>
