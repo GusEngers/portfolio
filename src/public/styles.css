@@ -1,0 +1,41 @@
+:root {
+  --primary-color: #00ffff;
+  --primary-color-hover: #00bfbf;
+  --primary-color-hover-bg: #00ffff15;
+  --mdb-primary-rgb: 0, 255, 255;
+  --background-color: #000404;
+}
+
+.btn-outline-primary {
+  --mdb-btn-color: var(--primary-color);
+  --mdb-btn-hover-bg:var(--primary-color-hover-bg);
+  --mdb-btn-hover-color: var(--primary-color-hover);
+  --mdb-btn-focus-bg: var(--primary-color-hover-bg);
+  --mdb-btn-focus-color: var(--primary-color-hover);
+  --mdb-btn-outline-border-color: var(--primary-color);
+  --mdb-btn-outline-focus-border-color: var(--primary-color-hover);
+  --mdb-btn-outline-hover-border-color: var(--primary-color-hover);
+  border-color: var(--primary-color);
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+main {
+  margin-top: 58px;
+}
+
+
+#home-main {
+  background-image: url('/public/371691.webp');
+  height: calc(100vh - 58px);
+}
+
+#bg-mask-home {
+  background-color: #000000b3;
+}
+
+#home-title {
+  font-size: 4rem;
+}

@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="es">
   <head>
-    <%- include('../../utils/head', { lang: 'es', title: 'GusEngers | Desenvolvedor Web' }) %>
+    <%- include('../utils/head') %>
+    <%- include('../utils/styles') %>
+    <title>GusEngers | Desarrollador Web</title>
   </head>
   <body>
     <%# -- Global Navbar -- %>
-    <%- include('../../components/navbar', { lang: 'pt', path: '' }) %>
+    <%- include('../components/navbar', {filter: false}) %>
 
     <%# -- Main Home -- %>
     
     <main id="home-main">
       <h1>Gustavo Engers</h1>
-      <h2>Desenvolvedor Web</h2>
+      <h2>Desarrollador Web</h2>
       <div id="home-icons-container">
         <% for(let tech of techs) { %>
           <iconify-icon
@@ -22,17 +24,17 @@
         <% } %>
       </div>
       <a
-        title="Ir para Projetos"
-        href="/pt/projects"
+        title="Ir a Proyectos"
+        href="/proyectos"
         type="button"
         class="big-button"
-      >Meus Projetos</a>
+      >Mis Proyectos</a>
     </main>
 
     <%# -- Global Footer -- %>
-    <%- include('../../components/footer') %>
+    <%- include('../components/footer') %>
 
     <%# -- Global Scripts -- %>
-    <%- include('../../utils/scripts') %>
+    <%- include('../utils/scripts') %>
   </body>
 </html>
