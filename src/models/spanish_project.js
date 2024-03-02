@@ -1,32 +1,18 @@
 const { Schema, model } = require('mongoose');
 const { TYPES } = require('../utils/constants');
 
-const Project = model(
-  'project',
+const SpanishProject = model(
+  'spanish_project',
   new Schema({
-    name_es: {
+    name: {
       type: String,
       required: true,
     },
-    name_pt: {
+    description: {
       type: String,
       required: true,
     },
-    description_es: {
-      type: String,
-      required: true,
-    },
-    description_pt: {
-      type: String,
-      required: true,
-    },
-    tasks_es: [
-      {
-        type: String,
-        required: true,
-      },
-    ],
-    tasks_pt: [
+    features: [
       {
         type: String,
         required: true,
@@ -66,7 +52,15 @@ const Project = model(
         type: Schema.Types.ObjectId,
       },
     ],
+    created_at: {
+      type: Date,
+      default: Date.now()
+    },
+    updated_at: {
+      type: Date,
+      default: Date.now()
+    }
   })
 );
 
-module.exports = Project;
+module.exports = SpanishProject;
