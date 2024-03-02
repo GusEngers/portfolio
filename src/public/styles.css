@@ -32,6 +32,13 @@
   --mdb-btn-box-shadow-state: 0 8px 9px -4px var(--primary-color), 0 4px 18px 0 var(--primary-color-hover);
 }
 
+.navbar:has(.show) {
+  background-color: var(--primary-color-hover-bg);
+  /* margin: 0 -0.75rem; */
+  /* padding: 0 0.75rem; */
+}
+
+/* -- Reglas CSS -- */
 body {
   background-color: var(--background-color);
 }
