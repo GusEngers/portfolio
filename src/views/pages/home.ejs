@@ -10,21 +10,21 @@
     <%# -- Main -- %>
     <main id="home-main" class="p-5 text-center bg-image">
       <div id="bg-mask-home" class="mask">
-        <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="d-flex justify-content-center align-items-center h-100" style="min-height: calc(100vh - 58px);">
           <div class="text-white">
             <h1 id="home-title" class="mb-3 text-primary text-uppercase">Gustavo Engers</h1>
             <h4 class="mb-3 text-uppercase">Desarrollador Web</h4>
             <a class="btn btn-outline-primary btn-lg" href="/projects" role="button">Proyectos</a>
-            <div class="d-flex justify-content-around ml-5 mr-5" role="group">
+            
+            <%# -- Tech Group -- %>
+            <div class="container d-flex flex-wrap justify-content-center align-items-center mt-3">
               <% for(let tech of techs) { %>
-                <iconify-icon
-                  title="<%= tech.name %>"
-                  icon="<%= tech.icon %>"
-                  class="btn btn-primary btn-floating"
-                  style="width: 4rem; height: 4rem; font-size: 2rem;">
-                </iconify-icon>
+                <a href="/projects?filter=<%= tech._id %>" class="btn btn-primary btn-floating icon-button-link">
+                  <iconify-icon title="<%= tech.name %>" icon="<%= tech.icon %>" class="icon-button-icon"></iconify-icon>
+                </a>
               <% } %>
             </div>
+
           </div>
         </div>
       </div>

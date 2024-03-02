@@ -6,6 +6,7 @@
   --background-color: #000404;
 }
 
+/* -- Reglas MDBootstrap -- */
 .btn-outline-primary {
   --mdb-btn-color: var(--primary-color);
   --mdb-btn-hover-bg:var(--primary-color-hover-bg);
@@ -16,6 +17,19 @@
   --mdb-btn-outline-focus-border-color: var(--primary-color-hover);
   --mdb-btn-outline-hover-border-color: var(--primary-color-hover);
   border-color: var(--primary-color);
+}
+
+.btn-primary {
+  --mdb-btn-bg: var(--primary-color-hover-bg);
+  --mdb-btn-color: #fff;
+  --mdb-btn-box-shadow: 0 4px 9px -4px var(--primary-color);
+  --mdb-btn-hover-bg: var(--primary-color);
+  --mdb-btn-hover-color: #fff;
+  --mdb-btn-focus-bg: var(--primary-color);
+  --mdb-btn-focus-color: #fff;
+  --mdb-btn-active-bg: var(--primary-color);
+  --mdb-btn-active-color: #fff;
+  --mdb-btn-box-shadow-state: 0 8px 9px -4px var(--primary-color), 0 4px 18px 0 var(--primary-color-hover);
 }
 
 body {
@@ -29,7 +43,7 @@ main {
 
 #home-main {
   background-image: url('/public/371691.webp');
-  height: calc(100vh - 58px);
+  min-height: calc(100vh - 58px);
 }
 
 #bg-mask-home {
@@ -38,4 +52,14 @@ main {
 
 #home-title {
   font-size: 4rem;
+}
+
+.icon-button-link {
+  width: 4rem;
+  height: 4rem;
+  margin: 10px;
+}
+
+.icon-button-icon {
+  font-size: 2rem;
 }

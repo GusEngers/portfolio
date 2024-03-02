@@ -6,12 +6,19 @@ const { homeRedirect } = require('../controllers');
 
 // router.route('/').get(homeRedirect);
 router.route('/').get((req, res) => {
-  const techs = [{name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},
-  {name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},
-  {name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},
-  {name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},
-  {name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},{name: "javascript", icon: "logos:javascript"},]
-  res.render('home', {techs});
+  const techs = [
+    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
+    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
+    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
+    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
+    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
+    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
+    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
+    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
+    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
+    { _id: 1, name: 'javascript', icon: 'logos:javascript' }
+  ];
+  res.render('home', { techs });
 });
 router.use('/es', es);
 router.use('/pt', pt);
