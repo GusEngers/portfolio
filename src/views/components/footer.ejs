@@ -1,48 +1,77 @@
-<footer id="footer">
-  <div id="footer-icons">
-    <a
-      title="Visitar perfil de GitHub"
-      href="https://github.com/GusEngers"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <iconify-icon class="footer-icons-icon" icon="mdi:github"></iconify-icon>
-    </a>
-    <a
-      title="Visitar perfil de LinkedIn"
-      href="https://www.linkedin.com/in/gustavo-elias-engers-965788223"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <iconify-icon class="footer-icons-icon" icon="devicon:linkedin"></iconify-icon>
-    </a>
-    <a
-      title="Visitar perfil de Facebook"
-      href="https://fb.com/gustavo.engers.50"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <iconify-icon class="footer-icons-icon" icon="logos:facebook"></iconify-icon>
-    </a>
+<footer class="text-center text-white">
+  <div class="container p-4">
+
+    <section class="mb-4">
+      <a class="btn btn-floating m-1" href="https://github.com/GusEngers" role="button" target="_blank" rel="noopener noreferrer">
+        <iconify-icon icon="mdi:github" style="color: white" class="icon-button-icon"></iconify-icon>
+      </a>
+      <a class="btn btn-floating m-1" href="https://www.linkedin.com/in/gustavo-elias-engers-965788223" role="button"  target="_blank" rel="noopener noreferrer">
+        <iconify-icon icon="devicon:linkedin" class="icon-button-icon"></iconify-icon>
+      </a>
+      <a class="btn btn-floating m-1" href="https://fb.com/gustavo.engers.50" role="button"  target="_blank" rel="noopener noreferrer">
+        <iconify-icon icon="logos:facebook" class="icon-button-icon"></iconify-icon>
+      </a>
+    </section>
+
+    <section>
+      <div class="row d-flex justify-content-around">
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase text-primary">Explora</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="/" class="text-white">Inicio</a>
+            </li>
+            <li>
+              <a href="/projects" class="text-white">Proyectos</a>
+            </li>
+            <li>
+              <a href="/about" class="text-white">Sobre Mí</a>
+            </li>
+            <li>
+              <a href="/contact" class="text-white">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase text-primary">Proyectos</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="/projects/full-stack" class="text-white">Full-Stack</a>
+            </li>
+            <li>
+              <a href="/projects/back-end" class="text-white">Back-End</a>
+            </li>
+            <li>
+              <a href="/projects/front-end" class="text-white">Front-End</a>
+            </li>
+            <li>
+              <a href="/projects/other" class="text-white">Otros</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase text-primary">Curriculums</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="/cv/full-stack" class="text-white">Full-Stack</a>
+            </li>
+            <li>
+              <a href="/cv/back-end" class="text-white">Back-End</a>
+            </li>
+            <li>
+              <a href="/cv/front-end" class="text-white">Front-End</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </div>
-  <div id="footer-paths">
-    <div class="footer-paths">
-      <h3>Explora</h3>
-      <ul>
-        <li><a title="Ir a Inicio" href="/">Inicio</a></li>
-        <li><a title="Ir a Proyectos" href="/proyectos">Proyectos</a></li>
-        <li><a title="Ir a Sobre Mí" href="/sobre_mi">Sobre Mí</a></li>
-        <li><a title="Ir a Contacto" href="/contacto">Contacto</a></li>
-      </ul>
-    </div>
-    <div class="footer-paths">
-      <h3>Proyectos</h3>
-      <ul>
-        <li><a title="Ir a Proyectos Full-Stack" href="/proyectos/full-stack">Proyectos Full-Stack</a></li>
-        <li><a title="Ir a Proyectos Back-End" href="/proyectos/back-end">Proyectos Back-End</a></li>
-        <li><a title="Ir a Proyectos Front-End" href="/proyectos/front-end">Proyectos Front-End</a></li>
-        <li><a title="Ir a Otros Proyectos" href="/proyectos/otros">Otros Proyectos</a></li>
-      </ul>
-    </div>
+
+  <div class="text-center p-3 text-primary bg-black bg-opacity-25">
+    © <%- new Date().getFullYear() %> Copyright:
+    <a class="text-primary" href="mailto:gustavoengers6441@gmail.com" target="_blank" rel="noopener noreferrer">Gustavo Engers</a>
   </div>
 </footer>

@@ -3,7 +3,8 @@
   --primary-color-hover: #00bfbf;
   --primary-color-hover-bg: #00ffff15;
   --mdb-primary-rgb: 0, 255, 255;
-  --background-color: #000404;
+  --background-color: #001818;
+  --background-color-footer: #001414;
 }
 
 /* -- Reglas MDBootstrap -- */
@@ -32,10 +33,8 @@
   --mdb-btn-box-shadow-state: 0 8px 9px -4px var(--primary-color), 0 4px 18px 0 var(--primary-color-hover);
 }
 
-.navbar:has(.show) {
-  background-color: var(--primary-color-hover-bg);
-  /* margin: 0 -0.75rem; */
-  /* padding: 0 0.75rem; */
+.navbar {
+  background-color: #0000007b;
 }
 
 /* -- Reglas CSS -- */
@@ -45,6 +44,10 @@ body {
 
 main {
   margin-top: 58px;
+}
+
+footer {
+  background-color: var(--background-color-footer);
 }
 
 
