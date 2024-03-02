@@ -20,7 +20,7 @@
             <%# -- Tech Group -- %>
             <div class="container d-flex flex-wrap justify-content-center align-items-center mt-3">
               <% for(let tech of techs) { %>
-                <a href="/projects?filter=<%= tech._id %>" class="btn btn-primary btn-floating icon-button-link">
+                <a href="/projects?tech=<%= tech._id %>" class="btn btn-primary btn-floating icon-button-link">
                   <iconify-icon title="<%= tech.name %>" icon="<%= tech.icon %>" class="icon-button-icon"></iconify-icon>
                 </a>
               <% } %>

@@ -6,19 +6,18 @@ class ErrorDB extends Error {
    * @param {String} message Mensaje de error
    * @param {Error} log Objeto de error original
    */
-  constructor(message, log) {
-    super(message);
+  constructor(log) {
+    super('Error al obtener los datos de la Base de Datos');
     this.log = log;
     this.statusCode = 400;
   }
 
   /**
-   * @param {Response} response
    * @returns Respuesta del servidor con el mensaje de error y código de estado HTTP
    */
-  response(response) {
-    console.log(`[LOG-ERROR] Error database: ${this.log.message}`);
-    return response.status(this.status).json({ message: this.message, statusCode: this.statusCode });
+  response() {
+    console.log(`[DB-ERROR] ${this.log.message}`);
+    return { message: this.message, statusCode: this.statusCode };
   }
 }
 
@@ -38,10 +37,9 @@ class ErrorResponse extends Error {
   }
 
   /**
-   * @param {Response} response
    * @returns Respuesta del servidor con el mensaje de error, el código de estado HTTP y los errores opcionales
    */
-  response(response) {
+  response() {
     console.log(`[LOG-ERROR] Error response: ${this.message}`);
     let body = {
       message: this.message,
@@ -50,8 +48,7 @@ class ErrorResponse extends Error {
     if (this.errors.length > 0) {
       body.errors = this.errors;
     }
-
-    return response.status(this.statusCode).json(body);
+    return body;
   }
 }
 

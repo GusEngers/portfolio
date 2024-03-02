@@ -1,10 +1,22 @@
+const { ErrorDB, ErrorResponse } = require('../utils/errors');
+const { getHome } = require('./home.controllers');
+
+/**
+ * @description Controlador para manejar errores en el renderizado de páginas
+ * @param {Error|ErrorDB|ErrorResponse} err Error emitido
+ * @param {import("express").Request} req Solicitud
+ * @param {import("express").Response} res Respuesta
+ * @param {import("express").NextFunction} next Función Next
+ */
+function errorHandlerPage(err, req, res, next) {
+  if (err instanceof ErrorDB || err instanceof ErrorResponse) return res.render('error', { error: err.response });
+  const error = {
+    message: 'Ocurrió un error inesperado',
+    statusCode: 500,
+  };
+  res.render('error', { error });
+}
+
 module.exports = {
-  /**
-   * Redirecciona la ruta principal `/` a la ruta `/es`
-   * @param {Request} req 
-   * @param {Response} res 
-   */
-  homeRedirect: function (req, res) {
-    res.redirect('/es');
-  },
+  getHomeController: [getHome, errorHandlerPage],
 };

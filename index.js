@@ -8,7 +8,7 @@ const { PORT } = require('./src/utils/constants');
  */
 async function main() {
   try {
-    // await db();
+    await db();
     app.listen(PORT, () => {
       console.log('[INFO] Server listening on Port:', PORT);
     });

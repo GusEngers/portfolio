@@ -2,24 +2,10 @@ const router = require('express').Router();
 const es = require('./es');
 const pt = require('./pt');
 
-const { homeRedirect } = require('../controllers');
+const con = require('../controllers');
 
 // router.route('/').get(homeRedirect);
-router.route('/').get((req, res) => {
-  const techs = [
-    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
-    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
-    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
-    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
-    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
-    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
-    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
-    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
-    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
-    { _id: 1, name: 'javascript', icon: 'logos:javascript' }
-  ];
-  res.render('home', { techs });
-});
+router.route('/').get(con.getHomeController);
 router.route('/about').get((req, res) => {
   const techs = [
     { _id: 1, name: 'javascript', icon: 'logos:javascript' },
@@ -31,7 +17,7 @@ router.route('/about').get((req, res) => {
     { _id: 1, name: 'javascript', icon: 'logos:javascript' },
     { _id: 1, name: 'javascript', icon: 'logos:javascript' },
     { _id: 1, name: 'javascript', icon: 'logos:javascript' },
-    { _id: 1, name: 'javascript', icon: 'logos:javascript' }
+    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
   ];
   res.render('home', { techs });
 });
@@ -46,7 +32,7 @@ router.route('/projects').get((req, res) => {
     { _id: 1, name: 'javascript', icon: 'logos:javascript' },
     { _id: 1, name: 'javascript', icon: 'logos:javascript' },
     { _id: 1, name: 'javascript', icon: 'logos:javascript' },
-    { _id: 1, name: 'javascript', icon: 'logos:javascript' }
+    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
   ];
   res.render('home', { techs });
 });
@@ -61,7 +47,7 @@ router.route('/projects/1').get((req, res) => {
     { _id: 1, name: 'javascript', icon: 'logos:javascript' },
     { _id: 1, name: 'javascript', icon: 'logos:javascript' },
     { _id: 1, name: 'javascript', icon: 'logos:javascript' },
-    { _id: 1, name: 'javascript', icon: 'logos:javascript' }
+    { _id: 1, name: 'javascript', icon: 'logos:javascript' },
   ];
   res.render('home', { techs });
 });

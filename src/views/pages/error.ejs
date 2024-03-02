@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <%- include('../utils/head') %>
-    <%- include('../utils/styles') %>
-    <title>GusEngers | Desarrollador Web</title>
+    <%- include('../utils/head', { title: 'Error' }) %>
   </head>
+
   <body>
     <%# -- Global Navbar -- %>
-    <%- include('../components/navbar', {filter: false}) %>
-
-    <%# -- Main Error -- %>
-    <main id="error-main">
-      <section>
-        <%- include('../components/section-projects-not-found', {message: error}) %>
-      </section>
+    <%- include('../components/navbar') %>
+    
+    <%# -- Main -- %>
+    <main class="p-5 text-center">
+      <h1><%= error.statusCode %></h1>
+      <h2>¡Lo sentimos!</h2>
+      <p><%= error.message %></p>
+      <a href="/">Volver al Inicio</a>
     </main>
 
     <%# -- Global Footer -- %>
     <%- include('../components/footer') %>
-
+    
     <%# -- Global Scripts -- %>
     <%- include('../utils/scripts') %>
+  
   </body>
 </html>
