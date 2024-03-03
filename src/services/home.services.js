@@ -8,16 +8,15 @@ const cache = require('../utils/cache');
  * @returns Lista de tecnologías favoritas
  */
 async function getTechs() {
-  if (cache.has('home-techs')) {
-    return JSON.parse(cache.get('home-techs'));
-  }
+  if (cache.has('home-techs')) return cache.get('home-techs');
+
   const techs = await Tech.find({ favorite: true })
     .select('-__v')
     .lean()
     .catch((e) => {
       throw new ErrorDB(e);
     });
-  cache.set('home-techs', JSON.stringify(techs));
+  cache.set('home-techs', techs);
   return techs;
 }
 

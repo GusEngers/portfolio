@@ -1,5 +1,9 @@
 const { ErrorDB, ErrorResponse } = require('../utils/errors');
+// Controladores
 const { getHome } = require('./home.controllers');
+const { getProjects } = require('./projects.controllers');
+// Middlewares
+const { checkProjectsQuery } = require('../middlewares/check-query');
 
 /**
  * @description Controlador para manejar errores en el renderizado de páginas
@@ -19,4 +23,5 @@ function errorHandlerPage(err, req, res, next) {
 
 module.exports = {
   getHomeController: [getHome, errorHandlerPage],
+  getProjectsController: [checkProjectsQuery, getProjects, errorHandlerPage]
 };

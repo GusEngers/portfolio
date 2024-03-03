@@ -44,6 +44,7 @@ body {
 
 main {
   margin-top: 58px;
+  min-height: calc(100vh - 58px);
 }
 
 footer {
@@ -53,7 +54,6 @@ footer {
 
 #home-main {
   background-image: url('/public/371691.webp');
-  min-height: calc(100vh - 58px);
 }
 
 #bg-mask-home {
