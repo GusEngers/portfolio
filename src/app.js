@@ -3,7 +3,7 @@ const path = require('path');
 const handleCors = require('./utils/handleCors');
 const handleNotFound = require('./utils/handleNotFound');
 const handleError = require('./utils/handleError');
-const router = require('./routes/index');
+const router = require('./routes');
 
 const app = express();
 

@@ -42,9 +42,13 @@ body {
   background-color: var(--background-color);
 }
 
+#loader-container,
+main {
+  min-height: calc(100vh - 58px);
+}
+
 main {
   margin-top: 58px;
-  min-height: calc(100vh - 58px);
 }
 
 footer {

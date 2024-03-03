@@ -9,19 +9,22 @@
     <%- include('../components/navbar') %>
     
     <%# -- Main -- %>
-    <main class="container text-center" style="min-height: 100vh;">
+    <main id="projects-container" class="container text-center">
 
-      <div class="text-center">
-        <div class="spinner-border" role="status">
+      <div id="loader-container" class="text-center d-flex justify-content-center align-items-center flex-column">
+        <h1 class="text-primary fs-1 text-uppercase">Cargando</h1>
+        <div class="spinner-border text-primary" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
       </div>
+
     </main>
 
     <%# -- Global Footer -- %>
     <%- include('../components/footer') %>
     
     <%# -- Global Scripts -- %>
+    <script src="/public/projects.js"></script>
     <%- include('../utils/scripts') %>
   
   </body>
