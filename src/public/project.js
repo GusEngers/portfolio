@@ -1,5 +1,5 @@
-const { pathname, search } = window.location;
-const projectsContainer = document.getElementById('projects-container');
+const { pathname } = window.location;
+const projectsContainer = document.getElementById('project-container');
 
 /**
  * Genera un elemento HTML donde se alojarán las distintas `card`
@@ -46,7 +46,7 @@ function createCard(props) {
   card.classList.add('col');
 
   card.innerHTML = `
-    <div class="card h-100 text-white">
+    <div class="card border border-white border-2 h-100 text-white">
       <img src="${props.avatar}" class="card-img-top" alt="Avatar de ${props.name}"/>
       <div class="card-header text-end text-secondary fst-italic bg-dark">${dateFormater(props.created_at)} / ${dateFormater(props.updated_at)}</div>
       <div class="card-body">
@@ -84,29 +84,29 @@ function errorMessage(message, statusCode = 400) {
   `;
 }
 
-fetch(`/api${pathname}${search}`)
-  .then((response) => response.json())
-  .then((value) => {
-    if(value.message && value.statusCode) {
-      projectsContainer.innerHTML = errorMessage(value.message, value.statusCode);
-    } else {
-      const projects = value.projects;
-      if (!projects.length) {
-        projectsContainer.innerHTML = errorMessage('No hay resultados para esta búsqueda', 404);
-      } else {
-        const list = createListCards();
-        for (let project of projects) {
-          const card = createCard(project);
-          list.appendChild(card);
-        }
-        const title = document.createElement('h1');
-        title.classList.add('m-3', 'pt-3', 'text-primary');
-        title.textContent = `Viendo: ${value.title}`;
-        projectsContainer.replaceChildren(title);
-        projectsContainer.appendChild(list);
-      }
-    }
-  })
-  .catch((e) => {
-    projectsContainer.innerHTML = errorMessage('Ocurrió un error inesperado', 500);
-  });
+// fetch(`/api${pathname}${search}`)
+//   .then((response) => response.json())
+//   .then((value) => {
+//     if(value.message && value.statusCode) {
+//       projectsContainer.innerHTML = errorMessage(value.message, value.statusCode);
+//     } else {
+//       const projects = value.projects;
+//       if (!projects.length) {
+//         projectsContainer.innerHTML = errorMessage('No hay resultados para esta búsqueda', 404);
+//       } else {
+//         const list = createListCards();
+//         for (let project of projects) {
+//           const card = createCard(project);
+//           list.appendChild(card);
+//         }
+//         const title = document.createElement('h1');
+//         title.classList.add('m-3', 'pt-3', 'text-primary');
+//         title.textContent = `Viendo: ${value.title}`;
+//         projectsContainer.replaceChildren(title);
+//         projectsContainer.appendChild(list);
+//       }
+//     }
+//   })
+//   .catch((e) => {
+//     projectsContainer.innerHTML = errorMessage('Ocurrió un error inesperado', 500);
+//   });

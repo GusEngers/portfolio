@@ -3,7 +3,7 @@
   --primary-color-hover: #00bfbf;
   --primary-color-hover-bg: #00ffff15;
   --mdb-primary-rgb: 0, 255, 255;
-  --background-color: #001818;
+  --background-color: #012f2f;
   --background-color-footer: #001414;
 }
 
@@ -37,6 +37,11 @@
   background-color: #0000007b;
 }
 
+.card-header,
+.card-footer {
+  border: none;
+}
+
 /* -- Reglas CSS -- */
 body {
   background-color: var(--background-color);
@@ -51,6 +56,7 @@ main {
   margin-top: 58px;
 }
 
+.card,
 footer {
   background-color: var(--background-color-footer);
 }

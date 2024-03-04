@@ -1,103 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <%- include('../utils/head') %>
-    <%- include('../utils/styles') %>
-    <title>GusEngers | <%= title %></title>
+    <%- include('../utils/head', { title: 'Proyectos' }) %>
   </head>
+
   <body>
     <%# -- Global Navbar -- %>
-    <%- include('../components/navbar', {filter: false}) %>
-
-    <%# -- Main Project -- %>
-    <main id="project-main">
-      <section id="project">
-        <% if (project === null) { %>
-          <%- include('../components/section-projects-not-found', {message: '¡Este proyecto no existe!'}) %>
-        <% } else { %>
-
-          <img src="<%= project.avatar.path %>" alt="<%= project.name %>" />
-          <h1 id="project-title"><%= project.name %></h1>
-          <h3 class="project-subtitle"><span>Categoría: </span><a href="/proyectos/<%= project.type %>"><%= project.type %></a></h3>
+    <%- include('../components/navbar') %>
     
-          <section class="project-section">
-            <h3>Información del Proyecto</h3>
-            <p id="project-description"><%= project.description %></p>
-            <ul id="project-tasks">
-              <% for(let task of project.tasks) { %>
-                <li><%= task %></li>
-              <% } %>
-            </ul>
-            <div id="project-techs">
-              <% for(let tech of project.techs) { %>
-                <iconify-icon
-                  title="<%= tech.name %>"
-                  icon="<%= tech.icon %>"
-                  class="home-icons">
-                </iconify-icon>
-              <% } %>
-            </div>
-          </section>
-    
-          <section class="project-section">
-            <h3>Accesos Disponibles</h3>
-            <ul id="project-paths-container">
-              <li><a
-                title="Ver repositorio del proyecto"
-                href="<%= project.github %>"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="project-path"
-              >
-                <iconify-icon icon="mdi:github"></iconify-icon>
-                <span>&nbsp;Repositorio</span>
-              </a></li>
-          
-              <% if (project.deploy) { %>
-                <li><a
-                  title="Ver sitio web del proyecto"
-                  href="<%= project.deploy %>"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-path"
-                >
-                  <iconify-icon icon="mdi:web"></iconify-icon>
-                  <span>&nbsp;Sitio Web</span>
-                </a></li>
-              <% } %>
-          
-              <% if (project.docs) { %>
-                <li><a
-                  title="Ver documentación del proyecto"
-                  href="<%= project.docs %>"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-path"
-                >
-                  <iconify-icon icon="iconoir:google-docs"></iconify-icon>
-                  <span>&nbsp;Documentación</span>
-                </a></li>
-              <% } %>
-              </ul>
-          </section>
-    
-          <% if (!!project.images.length) { %>
-            <section class="project-section">
-              <h3>Imágenes Adicionales</h3>
-                <% for(let image of project.images) { %>
-                  <img src="<%= image.path %>" alt="<%= image.originalname %>" />
-                <% } %>
-            </section>
-          <% } %>
-        <% } %>
+    <%# -- Main -- %>
+    <main id="project-container" class="container text-center">
 
-      </section>
+      <div id="loader-container" class="text-center d-flex justify-content-center align-items-center flex-column">
+        <h1 class="text-primary fs-1 text-uppercase">Cargando</h1>
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
     </main>
 
     <%# -- Global Footer -- %>
     <%- include('../components/footer') %>
-
+    
     <%# -- Global Scripts -- %>
+    <script src="/public/project.js"></script>
     <%- include('../utils/scripts') %>
+  
   </body>
 </html>

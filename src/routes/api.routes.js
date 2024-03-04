@@ -1,7 +1,8 @@
 const api = require('express').Router();
 
-const { getProjectsApiController } = require('../controllers');
+const con = require('../controllers');
 
-api.route('/projects').get(getProjectsApiController);
+api.route('/projects').get(con.getProjectsApiController);
+api.route('/projects/:type').get(con.getProjectsTypeApiController);
 
 module.exports = api;

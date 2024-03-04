@@ -15,13 +15,13 @@
           <div class="text-white">
             <h1 id="home-title" class="mb-3 text-primary text-uppercase">Gustavo Engers</h1>
             <h4 class="mb-3 text-uppercase">Desarrollador Web</h4>
-            <a class="btn btn-outline-primary btn-lg" href="/projects" role="button">Proyectos</a>
+            <a class="btn btn-outline-primary btn-lg" href="/projects" title="Ver todos los proyectos" role="button">Proyectos</a>
             
             <%# -- Tech Group -- %>
             <div class="container d-flex flex-wrap justify-content-center align-items-center mt-3">
               <% for(let tech of techs) { %>
                 <a href="/projects?tech=<%= tech._id %>" class="btn btn-primary btn-floating icon-button-link">
-                  <iconify-icon title="<%= tech.name %>" icon="<%= tech.icon %>" class="icon-button-icon"></iconify-icon>
+                  <iconify-icon title="Buscar proyectos con <%= tech.name %>" icon="<%= tech.icon %>" class="icon-button-icon"></iconify-icon>
                 </a>
               <% } %>
             </div>
