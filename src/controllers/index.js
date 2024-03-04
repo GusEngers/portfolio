@@ -1,10 +1,10 @@
 const { ErrorDB, ErrorResponse } = require('../utils/errors');
 // Controladores
 const { getHome } = require('./home.controllers');
-const { getProjects, getProjectsAPI, getProjectsType, getProjectsTypeAPI, getProject } = require('./projects.controllers');
+const { getProjects, getProjectsAPI, getProjectsType, getProjectsTypeAPI, getProject, getProjectAPI } = require('./projects.controllers');
 // Middlewares
 const { checkProjectsQuery } = require('../middlewares/check-query');
-const { checkProjectsTypeApiParams, checkProjectsTypeParams, checkProjectParams } = require('../middlewares/check-params');
+const { checkProjectsTypeApiParams, checkProjectsTypeParams, checkProjectParams, checkProjectApiParams } = require('../middlewares/check-params');
 
 /**
  * @description Controlador para manejar errores en el renderizado de páginas
@@ -14,7 +14,7 @@ const { checkProjectsTypeApiParams, checkProjectsTypeParams, checkProjectParams 
  * @param {import("express").NextFunction} next Función Next
  */
 function errorHandlerPage(err, req, res, next) {
-  console.log(err)
+  console.log(err);
   if (err instanceof ErrorDB || err instanceof ErrorResponse) return res.render('error', { error: err.response() });
   const error = {
     message: 'Ocurrió un error inesperado',
@@ -45,5 +45,6 @@ module.exports = {
   getProjectsApiController: [checkProjectsQuery, getProjectsAPI, errorHandlerApi],
   getProjectsTypeController: [checkProjectsTypeParams, getProjectsType, errorHandlerPage],
   getProjectsTypeApiController: [checkProjectsTypeApiParams, getProjectsTypeAPI, errorHandlerApi],
-  getProjectController: [checkProjectParams, getProject, errorHandlerPage]
+  getProjectController: [checkProjectParams, getProject, errorHandlerPage],
+  getProjectApiController: [checkProjectApiParams, getProjectAPI, errorHandlerApi],
 };

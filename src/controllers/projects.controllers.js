@@ -74,4 +74,20 @@ function getProject(req, res, next) {
   }
 }
 
-module.exports = { getProjects, getProjectsAPI, getProjectsType, getProjectsTypeAPI, getProject };
+/**
+ * @description Retorna la información del proyecto
+ * @param {import("express").Request} req Solicitud
+ * @param {import("express").Response} res Respuesta
+ * @param {import("express").NextFunction} next Función Next
+ */
+async function getProjectAPI(req, res, next) {
+  try {
+    const { id } = req.params;
+    const project = await projectsService.getProject(id);
+    res.json(project);
+  } catch (error) {
+    next(error);
+  }
+}
+
+module.exports = { getProjects, getProjectsAPI, getProjectsType, getProjectsTypeAPI, getProject, getProjectAPI };

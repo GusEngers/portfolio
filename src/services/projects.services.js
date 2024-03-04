@@ -1,5 +1,5 @@
 const { SpanishProject, Tech } = require('../models');
-const { ErrorDB } = require('../utils/errors');
+const { ErrorDB, ErrorResponse } = require('../utils/errors');
 
 const cache = require('../utils/cache');
 
@@ -47,22 +47,31 @@ async function getProjects(tech = undefined) {
  */
 async function getProjectsType(type) {
   let typeStr = type;
-  if(type === 'other') {
-    typeStr = 'otros'
+  if (type === 'other') {
+    typeStr = 'otros';
   }
   if (cache.has(`projects-type-${type}`)) return cache.get(`projects-type-${type}`);
 
-  const projects = await SpanishProject.find({type: typeStr})
+  const projects = await SpanishProject.find({ type: typeStr })
     .select('-__v -features -images -techs')
     .sort({ favorite: -1, _id: -1 })
     .lean()
     .catch((e) => {
       throw new ErrorDB(e);
     });
-  let title = typeStr === 'otros' ? 'Otros proyectos' : `Todos los proyectos ${typeStr.toUpperCase()}`
+  let title = typeStr === 'otros' ? 'Otros proyectos' : `Todos los proyectos ${typeStr.toUpperCase()}`;
   const data = { projects, title };
   cache.set(`projects-type-${type}`, data);
   return data;
 }
 
-module.exports = { getProjects, getProjectsType };
+async function getProject(id) {
+  if (cache.has(`project-${id}`)) return cache.get(`project-${id}`);
+
+  const project = await SpanishProject.findById(id).select('-__v').populate('techs').lean();
+  if (!project) throw new ErrorResponse('El proyecto no existe', 404);
+  cache.set(`project-${id}`, project);
+  return project;
+}
+
+module.exports = { getProjects, getProjectsType, getProject };
