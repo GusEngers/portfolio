@@ -29,12 +29,12 @@ function errorHandlerPage(err, req, res, next) {
  * @param {import("express").NextFunction} next Función Next
  */
 function errorHandlerApi(err, req, res, next) {
-  if (err instanceof ErrorDB || err instanceof ErrorResponse) return res.status(err.statusCode).json(err.response());
+  if (err instanceof ErrorDB || err instanceof ErrorResponse) return res.status(err.statusCode).send(err.response());
   const error = {
     message: 'Ocurrió un error inesperado',
     statusCode: 500,
   };
-  res.status(500).json(error);
+  res.status(500).send(error);
 }
 
 module.exports = {
