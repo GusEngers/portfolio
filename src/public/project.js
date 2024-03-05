@@ -2,74 +2,6 @@ const { pathname } = window.location;
 const projectContainer = document.getElementById('project-container');
 
 /**
- * Genera un elemento HTML donde se alojarán las distintas `card`
- * @returns Contenedor de `card`
- */
-function createListCards() {
-  const listCards = document.createElement('div');
-  listCards.classList.add('row', 'row-cols-1', 'row-cols-md-3', 'm-0', 'g-4', 'mb-4');
-  return listCards;
-}
-
-/**
- * Genera un elemento HTML con todos sus componentes hijos formando una `card`
- * @param props Datos necesarios para generar un `card`
- * @returns Card generada
- */
-function createCard(props) {
-  /**
-   * Genera un texto en formato MM-AAAA
-   * @param {string} date Fecha para formatear
-   * @returns Texto formateado
-   */
-  const dateFormater = (date) => {
-    const d = new Date(date);
-    return `${String(d.getDate() + 1).padStart(2, '0')}-${String(d.getMonth() + 1).padStart(2, '0')}-${d.getFullYear()}`;
-  };
-
-  /**
-   * Genera un botón para enlaces externos
-   * @param {string} href Dirección de redirección
-   * @param {string} icon Código de icono
-   * @param {string} title Título del enlace
-   * @returns Botón de enlace
-   */
-  const iconElement = (href, icon, title) => {
-    return `
-      <a class="btn btn-outline-primary text-primary icon-button-link btn-lg btn-floating" data-mdb-ripple-init href="${href}" role="button" title="${title}" target="_blank" rel="noopener noreferrer">
-        <iconify-icon icon="${icon}" class="icon-button-icon"></iconify-icon>
-      </a>
-    `;
-  };
-
-  const card = document.createElement('div');
-  card.classList.add('col');
-
-  card.innerHTML = `
-    <div class="cardh-100 text-white">
-      <img src="${props.avatar}" class="card-img-top" alt="Avatar de ${props.name}"/>
-      <div class="card-header text-end text-secondary fst-italic bg-dark">${dateFormater(props.created_at)} / ${dateFormater(props.updated_at)}</div>
-      <div class="card-body">
-        <h5 class="card-title text-primary">${props.name}</h5>
-        <h6 class="card-subtitle mb-2 text-secondary text-uppercase">${props.type}</h6>
-        <p class="card-text">
-          ${props.description}
-        </p>
-      </div>
-      <div class="card-footer text-center bg-dark">
-        <a class="btn btn-outline-primary btn-lg mb-2" title="Más información de ${props.name}" href="/project/${props._id}">Más Información</a>
-        <div class="d-flex justify-content-around" role="group">
-          ${iconElement(props.github, 'mdi:github', `Repositorio de ${props.name}`)}
-          ${props.deploy ? iconElement(props.deploy, 'mdi:web', `Sitio Web de ${props.name}`) : ''}
-          ${props.docs ? iconElement(props.docs, 'iconoir:google-docs', `Documentación de ${props.name}`) : ''}
-        </div>
-      </div>
-    </div>
-  `;
-  return card;
-}
-
-/**
  * Crea los elementos para mostrar en una página de error
  * @param {string} message Mensaje de error
  * @param {number} statusCode Código de estado HTTP
@@ -96,42 +28,86 @@ fetch(`/api${pathname}`)
       };
 
       projectContainer.innerHTML = `
-        <div class="card h-100 text-white">
-          <img src="${value.avatar}" class="card-img-top h-30" alt="Avatar de ${value.name}"/>
-          <h5 class="card-title text-primary fs-1">${value.name}</h5>
-          <h6 class="card-subtitle mb-2 text-secondary text-uppercase">${value.type}</h6>
-          <div class="card-body row row-cols-1 row-cols-md-2 m-2 justify-content-center">
-            <div class="d-flex flex-column align-items-center">
-              <h6 class="card-subtitle mb-2 text-uppercase fs-4">Descripción</h6>
-              <p class="card-text text-center text-md-start">
-                ${value.description}
-              </p>
-              <p class="card-text text-start w-100">
-                <span class="text-uppercase">Fecha de Inicio:</span> ${dateFormater(value.created_at)}
-              </p>
-              <p class="card-text text-start w-100 mb-2">
-                <span class="text-uppercase">Última modificación:</span> ${dateFormater(value.updated_at)}
-              </p>
-            </div>
-            <div class="d-flex flex-column align-items-center">
-              ${listTechs(value.techs)}
-            </div>
+        <div class="row row-cols-1 row-cols-md-2 text-white">
+          <img src="${value.avatar}" alt="Avatar de ${value.name}" />
+          <div class="d-flex flex-column align-items-center align-items-md-start">
+            <h1 class="mb-2 text-uppercase text-primary fs-3 text-center text-md-start">${value.name}</h1>
+            <a
+              href="/projects/${value.type === 'otros' ? 'other' : value.type}"
+              class="text-secondary text-uppercase"
+              title="Ver proyectos ${value.type}"
+            >${value.type}</a>
+            <p class="text-center text-md-start">
+              ${value.description}
+            </p>
+            <p class="text-start w-100 d-flex justify-content-between justify-content-md-start"><span class="text-uppercase fw-bold">Fecha de inicio:</span> <span>${dateFormater(
+              value.created_at
+            )}</span></p>
+            <p class="text-start w-100 d-flex justify-content-between justify-content-md-start"><span class="text-uppercase fw-bold">Última modificación:</span> <span>${dateFormater(
+              value.updated_at
+            )}</span></p>
           </div>
         </div>
+
+        <h6 class="mb-2 mt-2 text-uppercase fs-4 text-primary">Tecnologías usadas</h6>
+        <div class="d-flex flex-column align-items-center">${listTechs(value.techs)}</div>
+
+        <div class="row row-cols-1 row-cols-md-2 text-white">
+          <div class="d-flex flex-column align-items-center">
+            <h6 class="mb-2 mt-2 text-uppercase fs-4 text-primary">Principales características</h6>
+            <ul class="list-group list-group-light list-group-small">
+              ${listFeatures(value.features)}
+            </ul>
+          </div>
+          <div class="d-flex flex-column align-items-center">
+            <h6 class="mb-2 mt-2 text-uppercase fs-4 text-primary">Accesos disponibles</h6>
+            <a class="btn btn-outline-primary btn-lg w-50 d-flex justify-content-center align-items-center m-1" data-mdb-ripple-init href="${
+              value.github
+            }" role="button">
+              <iconify-icon icon="mdi:github" style="padding-right: 0.5rem;" class="icon-button-icon"></iconify-icon>
+              Repositorio
+            </a>          
+            ${
+              value.deploy
+                ? `
+              <a class="btn btn-outline-primary btn-lg w-50 d-flex justify-content-center align-items-center m-1" data-mdb-ripple-init href="${value.deploy}" role="button">
+                <iconify-icon icon="mdi:web" style="padding-right: 0.5rem;" class="icon-button-icon"></iconify-icon>
+                Sitio Web
+              </a> 
+            `
+                : ''
+            }
+            ${
+              value.docs
+                ? `
+              <a class="btn btn-outline-primary btn-lg w-50 d-flex justify-content-center align-items-center m-1" data-mdb-ripple-init href="${value.docs}" role="button">
+                <iconify-icon icon="iconoir:google-docs" style="padding-right: 0.5rem;" class="icon-button-icon"></iconify-icon>
+                Documentación
+              </a> 
+            `
+                : ''
+            }
+          </div>
+        </div>
+
+          ${
+            value.images.length
+              ? `
+            <h6 class="mb-2 mt-2 text-uppercase fs-4 text-primary">Imágenes Adicionales</h6>
+            ${listImages(value.images, value.name)}
+          `
+              : ''
+          }
       `;
     }
   })
   .catch((e) => {
+    console.log(e);
     projectContainer.innerHTML = errorMessage('Ocurrió un error inesperado', 500);
   });
 
 function listTechs(techs) {
   const container = document.createElement('div');
-
-  const title = document.createElement('h6');
-  title.textContent = 'Tecnologías';
-  title.classList.add('card-subtitle', 'mb-2', 'text-uppercase', 'text-center', 'fs-4');
-  container.appendChild(title);
 
   const list = document.createElement('div');
   list.classList.add('container', 'd-flex', 'flex-wrap', 'justify-content-center', 'align-items-start', 'mb-2');
@@ -146,6 +122,21 @@ function listTechs(techs) {
   return container.innerHTML;
 }
 
-// <a href="/projects?tech=<%= tech._id %>" class="btn btn-primary btn-floating icon-button-link">
-//                 <iconify-icon title="Buscar proyectos con <%= tech.name %>" icon="<%= tech.icon %>" class="icon-button-icon"></iconify-icon>
-//               </a>
+function listFeatures(features) {
+  const container = document.createElement('ul');
+  for (let feature of features) {
+    const item = document.createElement('li');
+    item.classList.add('list-group-item', 'text-white', 'border-0');
+    item.textContent = feature;
+    container.appendChild(item);
+  }
+  return container.innerHTML;
+}
+
+function listImages(images, name) {
+  let data = '';
+  for (let i = 0; i < images.length; i++) {
+    data += `<img src="${images[i]}" class="d-block w-100 m-2" alt="Imágen adicional ${i + 1} de ${name}"/>`;
+  }
+  return data;
+}
