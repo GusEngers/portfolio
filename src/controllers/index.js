@@ -2,6 +2,7 @@ const { ErrorDB, ErrorResponse } = require('../utils/errors');
 // Controladores
 const { getHome } = require('./home.controllers');
 const { getProjects, getProjectsAPI, getProjectsType, getProjectsTypeAPI, getProject, getProjectAPI } = require('./projects.controllers');
+const { getContact, postContactApi } = require('./contact.controllers');
 // Middlewares
 const { checkProjectsQuery } = require('../middlewares/check-query');
 const { checkProjectsTypeApiParams, checkProjectsTypeParams, checkProjectParams, checkProjectApiParams } = require('../middlewares/check-params');
@@ -14,7 +15,7 @@ const { checkProjectsTypeApiParams, checkProjectsTypeParams, checkProjectParams,
  * @param {import("express").NextFunction} next Función Next
  */
 function errorHandlerPage(err, req, res, next) {
-  console.log(err);
+  console.log('[CLIENT-ERROR] Error on client:', err);
   if (err instanceof ErrorDB || err instanceof ErrorResponse) return res.render('error', { error: err.response() });
   const error = {
     message: 'Ocurrió un error inesperado',
@@ -31,12 +32,13 @@ function errorHandlerPage(err, req, res, next) {
  * @param {import("express").NextFunction} next Función Next
  */
 function errorHandlerApi(err, req, res, next) {
-  if (err instanceof ErrorDB || err instanceof ErrorResponse) return res.status(err.statusCode).send(err.response());
+  console.log('[API-ERROR] Error on API:', err);
+  if (err instanceof ErrorDB || err instanceof ErrorResponse) return res.status(err.statusCode).json(err.response());
   const error = {
     message: 'Ocurrió un error inesperado',
     statusCode: 500,
   };
-  res.status(500).send(error);
+  res.status(500).json(error);
 }
 
 module.exports = {
@@ -47,4 +49,6 @@ module.exports = {
   getProjectsTypeApiController: [checkProjectsTypeApiParams, getProjectsTypeAPI, errorHandlerApi],
   getProjectController: [checkProjectParams, getProject, errorHandlerPage],
   getProjectApiController: [checkProjectApiParams, getProjectAPI, errorHandlerApi],
+  getContactController: [getContact, errorHandlerPage],
+  postContactController: [postContactApi, errorHandlerApi],
 };

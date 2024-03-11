@@ -9,6 +9,7 @@ const app = express();
 
 app.disable('x-powered-by');
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(require('morgan')('dev'));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
@@ -19,7 +20,7 @@ app.use(handleCors);
 
 app.use('/', router);
 
-// app.use(handleError);
+app.use(handleError);
 app.use(handleNotFound);
 
 module.exports = app;

@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <%- include('../utils/head') %>
-    <%- include('../utils/styles') %>
-    <title>GusEngers | Contacto</title>
+    <%- include('../utils/head', { title: 'Contacto' }) %>
   </head>
+
   <body>
     <%# -- Global Navbar -- %>
-    <%- include('../components/navbar', {filter: false}) %>
-
-    <%# -- Main Contact -- %>
-    <main id="contact-main">
-      <section class="contact-section">
-        <h1>¡Contáctame!</h1>
-        <p>Puedes contactarme a través de las siguientes opciones</p>
-        <div id="contact-methods">
-          <div><iconify-icon icon="logos:google-gmail" class="icon-contact"></iconify-icon><a href="mailto:gustavoengers6441@gmail.com">Enviándome un Email</a></div>
-          <div><iconify-icon icon="logos:whatsapp-icon" class="icon-contact"></iconify-icon><span>+54 9 3754-499497</span></div>
+    <%- include('../components/navbar') %>
+    
+    <%# -- Main -- %>
+    <main class="container d-flex align-items-center justify-content-center">
+      <form id="contact-form" style="width: 26rem" class="p-5 rounded-8 text-center">
+        <h3 class="text-primary w-100 text-center text-uppercase">Deje su mensaje</h3>
+        <!-- Name input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input type="text" id="form4Example1" name="name" class="form-control" minlength="3" required />
+          <label class="form-label" for="form4Example1">Nombre</label>
         </div>
-        <p class="contact-info">¡Próximamente habrá un formulario para enviar correos desde aqui!</p>
-      </section>
-      <%#  
-      <section>
-        <form action="/contact" method="post">
-          <div>
-            <label for="name">Nombre</label>
-            <input type="text" name="name" id="name" />
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-          </div>
-          <div>
-            <label for="body">Mensaje</label>
-            <textarea name="body" id="body" cols="30" rows="10"></textarea>
-            <input type="submit" value="ENVIAR" />
-          </div>
-        </form>
-      </section>
-      %>
+
+        <!-- Email input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <input type="email" id="form4Example2" name="email" class="form-control" required />
+          <label class="form-label" for="form4Example2">Email</label>
+        </div>
+
+        <!-- Message input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <textarea class="form-control" id="form4Example3" name="message" minlength="10" rows="4" required></textarea>
+          <label class="form-label" for="form4Example3">Mensaje</label>
+        </div>
+
+        <!-- Submit button -->
+        <button data-mdb-ripple-init id="contact-submit-button" type="submit" class="btn btn-outline-primary btn-lg btn-block mb-4" disabled>
+          Enviar
+        </button>
+      </form>
     </main>
 
     <%# -- Global Footer -- %>
@@ -44,5 +42,67 @@
 
     <%# -- Global Scripts -- %>
     <%- include('../utils/scripts') %>
+
+    <script>
+      const form = document.getElementById('contact-form');
+      const nameInput = document.getElementById('form4Example1');
+      const emailInput = document.getElementById('form4Example2');
+      const messageInput = document.getElementById('form4Example3');
+      const button = document.getElementById('contact-submit-button');
+
+      let nameValue = '';
+      let emailValue = '';
+      let messageValue = '';
+
+      function checkDisabled() {
+        if (!nameInput.validity.valid || !emailInput.validity.valid || !messageInput.validity.valid) {
+          button.disabled = true;
+        } else {
+          button.disabled = false;
+        }
+      }
+
+      nameInput.addEventListener('input', (event) => {
+        nameValue = event.target.value;
+        checkDisabled();
+      });
+      emailInput.addEventListener('input', (event) => {
+        emailValue = event.target.value;
+        checkDisabled();
+      });
+      messageInput.addEventListener('input', (event) => {
+        messageValue = event.target.value;
+        checkDisabled();
+      });
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        button.outerHTML = `
+          <div id="contact-submit-button" class="spinner-border text-primary text-center" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        `
+
+        fetch('/api/contact', {
+          method: 'POST',
+          body: new URLSearchParams({
+            name: nameValue,
+            message: messageValue,
+            email: emailValue
+          })
+        })
+        .then((res) => {
+          if(!res.ok) throw new Error('Failed fetch');
+          res.json();
+        }).then((res) => {
+          const button = document.getElementById('contact-submit-button');
+          button.outerHTML = `<p class="text-primary">Mensaje Enviado</p>`;
+        }).catch((err) => {
+          const button = document.getElementById('contact-submit-button');
+          button.outerHTML = `<p class="text-danger">Error al enviar el mensaje. ¡Inténtalo más tarde!</p>`;
+        })
+      })
+    </script>
   </body>
 </html>

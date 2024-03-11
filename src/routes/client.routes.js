@@ -5,5 +5,6 @@ client.route('/').get(con.getHomeController);
 client.route('/projects').get(con.getProjectsController);
 client.route('/projects/:type').get(con.getProjectsTypeController);
 client.route('/project/:id').get(con.getProjectController);
+client.route('/contact').get(con.getContactController);
 
 module.exports = client;
