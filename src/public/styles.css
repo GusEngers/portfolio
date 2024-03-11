@@ -93,3 +93,8 @@ footer {
 .icon-button-icon {
   font-size: 2rem;
 }
+
+#container-text-contact,
+#container-form-contact {
+  min-width: 49vw;
+}
