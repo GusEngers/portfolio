@@ -126,8 +126,11 @@ function listFeatures(features) {
   const container = document.createElement('ul');
   for (let feature of features) {
     const item = document.createElement('li');
+    const divider = document.createElement('hr');
+    divider.classList.add('hr', 'hr-blurry');
     item.classList.add('list-group-item', 'text-white', 'border-0');
     item.textContent = feature;
+    item.appendChild(divider);
     container.appendChild(item);
   }
   return container.innerHTML;

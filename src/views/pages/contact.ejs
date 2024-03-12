@@ -11,30 +11,7 @@
     <%# -- Main -- %>
     <main class="container d-flex flex-column align-items-center justify-content-center">
       <h1 class="text-primary text-uppercase text-center mt-5">Contacto</h1>
-      <a
-        class="btn btn-outline-primary btn-lg d-flex justify-content-center align-items-center m-2"
-        data-mdb-ripple-init
-        href="mailto:gustavoengers6441@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        role="button"
-        style="width: 27vw;"
-      >
-        <iconify-icon icon="basil:gmail-solid" style="padding-right: 0.5rem;" class="icon-button-icon"></iconify-icon>
-        Correo
-      </a>
-      <a
-        class="btn btn-outline-primary btn-lg d-flex justify-content-center align-items-center m-2"
-        data-mdb-ripple-init
-        href="https://api.whatsapp.com/send/?phone=5493754499497&text=Hola%2C+te+contacto+desde+tu+Portfolio%21&type=phone_number&app_absent=0"
-        target="_blank"
-        rel="noopener noreferrer"
-        role="button"
-        style="width: 27vw;"
-      >
-        <iconify-icon icon="ic:outline-whatsapp" style="padding-right: 0.5rem;" class="icon-button-icon"></iconify-icon>
-        Whatsapp
-      </a>
+      
       <div class="d-flex align-items-center justify-content-center">
         <form id="contact-form" style="width: 26rem" class="mb-2 p-5 rounded-8 text-center">
           <h3 class="text-primary w-100 text-center text-uppercase">Deje su mensaje</h3>
@@ -60,6 +37,31 @@
           <button data-mdb-ripple-init id="contact-submit-button" type="submit" class="btn btn-outline-primary btn-lg btn-block mb-4" disabled>
             Enviar
           </button>
+
+          <hr class="hr hr-blurry" />
+
+          <a
+            class="btn btn-outline-primary btn-lg d-flex justify-content-center align-items-center m-2"
+            data-mdb-ripple-init
+            href="mailto:gustavoengers6441@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="button"
+          >
+            <iconify-icon icon="basil:gmail-solid" style="padding-right: 0.5rem;" class="icon-button-icon"></iconify-icon>
+            Enviar un Correo
+          </a>
+          <a
+            class="btn btn-outline-primary btn-lg d-flex justify-content-center align-items-center m-2"
+            data-mdb-ripple-init
+            href="https://api.whatsapp.com/send/?phone=5493754499497&text=Hola%2C+te+contacto+desde+tu+Portfolio%21&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="button"
+          >
+            <iconify-icon icon="ic:outline-whatsapp" style="padding-right: 0.5rem;" class="icon-button-icon"></iconify-icon>
+            Enviar un Whatsapp
+          </a>
         </form>
       </div>
     </main>

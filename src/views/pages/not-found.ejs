@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <%- include('../utils/head') %>
-    <%- include('../utils/styles') %>
-    <title>GusEngers | Desarrollador Web</title>
+    <%- include('../utils/head', { title: 'Página no encontrada' }) %>
   </head>
+
   <body>
     <%# -- Global Navbar -- %>
-    <%- include('../components/navbar', {filter: false}) %>
-
-    <%# -- Main Not Found -- %>
-    <main id="not-found-main">
-      <section>
-        <%- include('../components/section-projects-not-found', {message: "404 - Esta página no existe"}) %>
-      </section>
+    <%- include('../components/navbar') %>
+    
+    <%# -- Main -- %>
+    <main class="p-5 text-center">
+      <h1 id="home-title" class="mb-3 text-primary text-uppercase">404</h1>
+    <h2 class="mb-3 text-uppercase text-white">¡Lo sentimos!</h2>
+    <p class="text-white">Página no encontrada</p>
+    <a class="btn btn-outline-primary btn-lg" href="/">Volver al Inicio</a>
     </main>
 
     <%# -- Global Footer -- %>
     <%- include('../components/footer') %>
-
+    
     <%# -- Global Scripts -- %>
     <%- include('../utils/scripts') %>
+  
   </body>
 </html>
