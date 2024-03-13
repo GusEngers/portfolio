@@ -129,6 +129,7 @@ function listFeatures(features) {
     const divider = document.createElement('hr');
     divider.classList.add('hr', 'hr-blurry');
     item.classList.add('list-group-item', 'text-white', 'border-0');
+    item.style = 'padding: 0;';
     item.textContent = feature;
     item.appendChild(divider);
     container.appendChild(item);

@@ -1,5 +1,6 @@
 const { isObjectIdOrHexString } = require('mongoose');
 const { ErrorResponse } = require('../utils/errors');
+const { TYPES } = require('../utils/constants');
 
 /**
  * @description Verifica si el parámetro ingresado es correcto
@@ -57,4 +58,16 @@ function checkProjectApiParams(req, res, next) {
   next();
 }
 
-module.exports = { checkProjectsTypeApiParams, checkProjectsTypeParams, checkProjectParams, checkProjectApiParams };
+/**
+ * @description Verifica si el nombre del CV buscado es correcto
+ * @param {import("express").Request} req Solicitud
+ * @param {import("express").Response} res Respuesta
+ * @param {import("express").NextFunction} next Función Next
+ */
+function checkCvParams(req, res, next) {
+  const { cv } = req.params;
+  if (cv === 'otros' || !TYPES.includes(cv)) return res.render('not-found');
+  next();
+}
+
+module.exports = { checkProjectsTypeApiParams, checkProjectsTypeParams, checkProjectParams, checkProjectApiParams, checkCvParams };

@@ -3,9 +3,16 @@ const { ErrorDB, ErrorResponse } = require('../utils/errors');
 const { getHome } = require('./home.controllers');
 const { getProjects, getProjectsAPI, getProjectsType, getProjectsTypeAPI, getProject, getProjectAPI } = require('./projects.controllers');
 const { getContact, postContactApi } = require('./contact.controllers');
+const { getCv } = require('./cvs.controllers');
 // Middlewares
 const { checkProjectsQuery } = require('../middlewares/check-query');
-const { checkProjectsTypeApiParams, checkProjectsTypeParams, checkProjectParams, checkProjectApiParams } = require('../middlewares/check-params');
+const {
+  checkProjectsTypeApiParams,
+  checkProjectsTypeParams,
+  checkProjectParams,
+  checkProjectApiParams,
+  checkCvParams,
+} = require('../middlewares/check-params');
 
 /**
  * @description Controlador para manejar errores en el renderizado de páginas
@@ -51,4 +58,5 @@ module.exports = {
   getProjectApiController: [checkProjectApiParams, getProjectAPI, errorHandlerApi],
   getContactController: [getContact, errorHandlerPage],
   postContactController: [postContactApi, errorHandlerApi],
+  getCvController: [checkCvParams, getCv, errorHandlerPage],
 };
