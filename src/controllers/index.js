@@ -3,7 +3,8 @@ const { ErrorDB, ErrorResponse } = require('../utils/errors');
 const { getHome } = require('./home.controllers');
 const { getProjects, getProjectsAPI, getProjectsType, getProjectsTypeAPI, getProject, getProjectAPI } = require('./projects.controllers');
 const { getContact, postContactApi } = require('./contact.controllers');
-const { getCv } = require('./cvs.controllers');
+const { getCv } = require('./cv.controllers');
+const { getAbout } = require('./about.controllers');
 // Middlewares
 const { checkProjectsQuery } = require('../middlewares/check-query');
 const {
@@ -59,4 +60,5 @@ module.exports = {
   getContactController: [getContact, errorHandlerPage],
   postContactController: [postContactApi, errorHandlerApi],
   getCvController: [checkCvParams, getCv, errorHandlerPage],
+  getAboutController: [getAbout, errorHandlerPage],
 };

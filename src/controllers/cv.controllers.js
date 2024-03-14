@@ -1,4 +1,4 @@
-const { cvsService } = require('../services');
+const { cvService } = require('../services');
 
 /**
  * @description Obtiene la ruta url del CV y lo redirecciona hacia ella
@@ -9,7 +9,7 @@ const { cvsService } = require('../services');
 async function getCv(req, res, next) {
   try {
     const { cv } = req.params;
-    const pathCv = await cvsService.getCv(cv);
+    const pathCv = await cvService.getCv(cv);
     res.redirect(pathCv);
   } catch (error) {
     next(error);
