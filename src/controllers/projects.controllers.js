@@ -8,7 +8,7 @@ const { projectsService } = require('../services');
  */
 function getProjects(req, res, next) {
   try {
-    res.render('projects');
+    res.render('pages/projects');
   } catch (error) {
     next(error);
   }
@@ -38,7 +38,7 @@ async function getProjectsAPI(req, res, next) {
  */
 function getProjectsType(req, res, next) {
   try {
-    res.render('projects');
+    res.render('pages/projects');
   } catch (error) {
     next(error);
   }
@@ -68,7 +68,7 @@ async function getProjectsTypeAPI(req, res, next) {
  */
 function getProject(req, res, next) {
   try {
-    res.render('project');
+    res.render('pages/project');
   } catch (error) {
     next(error);
   }

@@ -25,7 +25,7 @@ function checkProjectsTypeApiParams(req, res, next) {
 function checkProjectsTypeParams(req, res, next) {
   const { type } = req.params;
   if (type !== 'full-stack' && type !== 'back-end' && type !== 'front-end' && type !== 'other') {
-    return res.render('error', { error: new ErrorResponse('El parámetro indicado es incorrecto', 403).response() });
+    return res.render('pages/error', { error: new ErrorResponse('El parámetro indicado es incorrecto', 403).response() });
   }
   next();
 }
@@ -39,7 +39,7 @@ function checkProjectsTypeParams(req, res, next) {
 function checkProjectParams(req, res, next) {
   const { id } = req.params;
   if (!isObjectIdOrHexString(id)) {
-    return res.render('error', { error: new ErrorResponse('El ID tiene un formato incorrecto', 403).response() });
+    return res.render('pages/error', { error: new ErrorResponse('El ID tiene un formato incorrecto', 403).response() });
   }
   next();
 }
@@ -66,7 +66,7 @@ function checkProjectApiParams(req, res, next) {
  */
 function checkCvParams(req, res, next) {
   const { cv } = req.params;
-  if (cv === 'otros' || !TYPES.includes(cv)) return res.render('not-found');
+  if (cv === 'otros' || !TYPES.includes(cv)) return res.render('pages/not-found');
   next();
 }
 

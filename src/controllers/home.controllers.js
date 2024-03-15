@@ -9,7 +9,7 @@ const { homeServices } = require('../services');
 async function getHome(req, res, next) {
   try {
     const techs = await homeServices.getTechs();
-    res.render('home', { techs });
+    res.render('pages/home', { techs });
   } catch (error) {
     next(error);
   }

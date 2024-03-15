@@ -8,7 +8,7 @@ const { axios } = require('../utils/axios');
  */
 function getContact(req, res, next) {
   try {
-    res.render('contact');
+    res.render('pages/contact');
   } catch (error) {
     next(error);
   }

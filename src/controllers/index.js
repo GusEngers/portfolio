@@ -24,12 +24,12 @@ const {
  */
 function errorHandlerPage(err, req, res, next) {
   console.log('[CLIENT-ERROR] Error on client:', err);
-  if (err instanceof ErrorDB || err instanceof ErrorResponse) return res.render('error', { error: err.response() });
+  if (err instanceof ErrorDB || err instanceof ErrorResponse) return res.render('pages/error', { error: err.response() });
   const error = {
     message: 'Ocurrió un error inesperado',
     statusCode: 500,
   };
-  res.render('error', { error });
+  res.render('pages/error', { error });
 }
 
 /**
