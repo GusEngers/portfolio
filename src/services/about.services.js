@@ -56,4 +56,12 @@ function getAge() {
   return currentAge;
 }
 
-module.exports = { getCvs, getTechs, getAge };
+/**
+ * @returns Lista con datos de mis distintas formaciones académicas
+ */
+function getStudies() {
+  const { STUDIES } = require('../utils/constants');
+  return STUDIES;
+}
+
+module.exports = { getCvs, getTechs, getAge, getStudies };

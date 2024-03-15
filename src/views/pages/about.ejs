@@ -103,14 +103,18 @@
             data-mdb-parent="#accordionFlushExample"
           >
             <div class="accordion-body text-white">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-              richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-              brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-              sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
-              et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-              sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat
-              craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't
-              heard of them accusamus labore sustainable VHS.
+              <ul class="list-group list-group-light mb-3">
+                <% studies.forEach((study) => { %>
+                  <li class="list-group-item">
+                    <h5 class="fw-bold text-primary"><%= study.name %></h5>
+                    <p class="text-white mb-2 fw-bold"><%= study.service %></p>
+                    <p class="text-white mb-0"><%= study.date %></p>
+                    <% if (study.certification) { %>
+                     <a href="<%= study.certification %>" target="_blank" rel="noopener noreferrer">Certificado</a>
+                    <% } %>
+                  </li>
+                <% }) %>
+              </ul>
             </div>
           </div>
         </div>
