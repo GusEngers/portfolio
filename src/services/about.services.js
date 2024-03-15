@@ -39,4 +39,21 @@ async function getTechs() {
   return techs;
 }
 
-module.exports = { getCvs, getTechs };
+/**
+ * @description Obtiene mi edad actual de forma dinámica
+ * @returns Edad actual
+ */
+function getAge() {
+  const current = new Date();
+  const [currentYear, currentMonth, currentDay] = [current.getFullYear(), current.getMonth() + 1, current.getDate()];
+  const original = new Date('2000-07-17');
+  const [originalYear, originalMonth, originalDay] = [original.getFullYear(), original.getMonth() + 1, original.getDate()];
+
+  let currentAge = currentYear - originalYear;
+  if (currentMonth < originalMonth || (currentMonth === originalMonth && currentDay < originalDay)) {
+    currentAge--;
+  }
+  return currentAge;
+}
+
+module.exports = { getCvs, getTechs, getAge };

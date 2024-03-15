@@ -9,7 +9,8 @@ const { aboutService } = require('../services');
 async function getAbout(req, res, next) {
   try {
     const [cvs, techs] = await Promise.all([aboutService.getCvs(), aboutService.getTechs()]);
-    res.render('about', { cvs, techs });
+    const age = aboutService.getAge();
+    res.render('about', { cvs, techs, age });
   } catch (error) {
     next(error);
   }
