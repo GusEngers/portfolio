@@ -28,7 +28,7 @@ fetch(`/api${pathname}`)
       };
 
       projectContainer.innerHTML = `
-        <div class="row row-cols-1 row-cols-md-2 text-white">
+        <div class="row row-cols-1 row-cols-md-2 text-white pt-4">
           <img src="${value.avatar}" alt="Avatar de ${value.name}" />
           <div class="d-flex flex-column align-items-center align-items-md-start">
             <h1 class="mb-2 text-uppercase text-primary fs-3 text-center text-md-start">${value.name}</h1>
@@ -48,56 +48,140 @@ fetch(`/api${pathname}`)
             )}</span></p>
           </div>
         </div>
-
-        <h6 class="mb-2 mt-2 text-uppercase fs-4 text-primary">Tecnologías usadas</h6>
-        <div class="d-flex flex-column align-items-center">${listTechs(value.techs)}</div>
-
-        <div class="row row-cols-1 row-cols-md-2 text-white">
-          <div class="d-flex flex-column align-items-center">
-            <h6 class="mb-2 mt-2 text-uppercase fs-4 text-primary">Principales características</h6>
-            <ul class="list-group list-group-light list-group-small">
-              ${listFeatures(value.features)}
-            </ul>
+        
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button
+                data-mdb-collapse-init
+                class="accordion-button collapsed"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#flush-collapseOne"
+                aria-expanded="false"
+                aria-controls="flush-collapseOne"
+              >
+                Tecnologías Usadas
+              </button>
+            </h2>
+            <div
+              id="flush-collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingOne"
+              data-mdb-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body text-white">
+                <p>Para la construcción de este proyecto se utilizaron principalmente estas tecnologías:</p>
+                <div class="container d-flex flex-wrap justify-content-center align-items-center mt-3">
+                  ${listTechs(value.techs)}
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="d-flex flex-column align-items-center">
-            <h6 class="mb-2 mt-2 text-uppercase fs-4 text-primary">Accesos disponibles</h6>
-            <a class="btn btn-outline-primary btn-lg w-50 d-flex justify-content-center align-items-center m-1" data-mdb-ripple-init href="${
-              value.github
-            }" role="button">
-              <iconify-icon icon="mdi:github" style="padding-right: 0.5rem;" class="icon-button-icon"></iconify-icon>
-              Repositorio
-            </a>          
-            ${
-              value.deploy
-                ? `
-              <a class="btn btn-outline-primary btn-lg w-50 d-flex justify-content-center align-items-center m-1" data-mdb-ripple-init href="${value.deploy}" role="button">
-                <iconify-icon icon="mdi:web" style="padding-right: 0.5rem;" class="icon-button-icon"></iconify-icon>
-                Sitio Web
-              </a> 
-            `
-                : ''
-            }
-            ${
-              value.docs
-                ? `
-              <a class="btn btn-outline-primary btn-lg w-50 d-flex justify-content-center align-items-center m-1" data-mdb-ripple-init href="${value.docs}" role="button">
-                <iconify-icon icon="iconoir:google-docs" style="padding-right: 0.5rem;" class="icon-button-icon"></iconify-icon>
-                Documentación
-              </a> 
-            `
-                : ''
-            }
-          </div>
-        </div>
 
-          ${
-            value.images.length
-              ? `
-            <h6 class="mb-2 mt-2 text-uppercase fs-4 text-primary">Imágenes Adicionales</h6>
-            ${listImages(value.images, value.name)}
-          `
-              : ''
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button
+                data-mdb-collapse-init
+                class="accordion-button collapsed"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#flush-collapseTwo"
+                aria-expanded="false"
+                aria-controls="flush-collapseTwo"
+              >
+                Principales Características
+              </button>
+            </h2>
+            <div
+              id="flush-collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingTwo"
+              data-mdb-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body text-white">
+                <ul class="list-group list-group-light list-group-small">
+                  ${listFeatures(value.features)}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button
+                data-mdb-collapse-init
+                class="accordion-button collapsed"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#flush-collapseThree"
+                aria-expanded="false"
+                aria-controls="flush-collapseThree"
+              >
+                Accesos Disponibles
+              </button>
+            </h2>
+            <div
+              id="flush-collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingThree"
+              data-mdb-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body text-white">
+                <p>El proyecto cuenta con los siguientes accesos donde se podrá revisar el código fuente y además, en caso de estar disponible, su página web y documentación:</p>
+                <div class="btn-group">
+                  <a class="btn btn-outline-primary btn-lg d-flex align-items-center flex-wrap justify-content-center" data-mdb-ripple-init href="${value.github}" role="button" target="_blank" rel="noopener noreferrer">
+                    <iconify-icon icon="mdi:github" style="padding-right: 0.5rem;" class="icon-button-icon"></iconify-icon>
+                    Repositorio
+                  </a>
+
+                  ${ value.deploy ?
+                    `<a class="btn btn-outline-primary btn-lg d-flex align-items-center flex-wrap justify-content-center" data-mdb-ripple-init href="${value.deploy}" role="button" target="_blank" rel="noopener noreferrer">
+                      <iconify-icon icon="mdi:web" style="padding-right: 0.5rem;" class="icon-button-icon"></iconify-icon>
+                      Sitio Web
+                    </a>` : ''
+                  }
+                  
+                  ${ value.docs ?
+                    `<a class="btn btn-outline-primary btn-lg d-flex align-items-center flex-wrap justify-content-center" data-mdb-ripple-init href="${value.docs}" role="button" target="_blank" rel="noopener noreferrer">
+                      <iconify-icon icon="iconoir:google-docs" style="padding-right: 0.5rem;" class="icon-button-icon"></iconify-icon>
+                      Documentación
+                    </a>` : ''
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          ${ value.images.length ?
+            `<div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingFour">
+                <button
+                  data-mdb-collapse-init
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-mdb-toggle="collapse"
+                  data-mdb-target="#flush-collapseFour"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseFour"
+                >
+                  Imágenes Adicionales
+                </button>
+              </h2>
+              <div
+                id="flush-collapseFour"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingFour"
+                data-mdb-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body text-white">
+                  <p>Se puede observar distintas partes de la interfaz de usuario del proyecto en las siguientes imágenes:</p>
+                  ${listImages(value.images, value.name)}
+                </div>
+              </div>
+            </div>` : ''
           }
+        </div>
       `;
     }
   })
@@ -126,12 +210,8 @@ function listFeatures(features) {
   const container = document.createElement('ul');
   for (let feature of features) {
     const item = document.createElement('li');
-    const divider = document.createElement('hr');
-    divider.classList.add('hr', 'hr-blurry');
     item.classList.add('list-group-item', 'text-white', 'border-0');
-    item.style = 'padding: 0;';
     item.textContent = feature;
-    item.appendChild(divider);
     container.appendChild(item);
   }
   return container.innerHTML;
