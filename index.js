@@ -1,12 +1,16 @@
 const app = require('./src/app');
 const db = require('./src/config/db');
-require('dotenv').config();
+const { PORT } = require('./src/utils/constants');
 
+/**
+ * Ejecuta la conexión a la base de datos y pone en marcha
+ * el servidor en el puerto indicado
+ */
 async function main() {
   try {
     await db();
-    app.listen(process.env.PORT, () => {
-      console.log('[INFO] Server listening on Port:', process.env.PORT);
+    app.listen(PORT, () => {
+      console.log('[INFO] Server listening on Port:', PORT);
     });
   } catch (error) {
     console.error('[ERROR] Error starting server:', error);

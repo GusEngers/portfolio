@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <%- include('../utils/head') %>
-    <%- include('../utils/styles') %>
-    <title>GusEngers | Proyectos</title>
+    <%- include('../utils/head', { title: 'Proyectos' }) %>
   </head>
+
   <body>
     <%# -- Global Navbar -- %>
-    <%- include('../components/navbar', {filter: true}) %>
+    <%- include('../components/navbar') %>
+    
+    <%# -- Main -- %>
+    <main id="projects-container" class="container text-center">
 
-    <%# -- Main Projects -- %>
-    <main id="projects-main">
-      <section id="projects-section">
-        <% if (projects.length) { %>
-          <h1>Estas viendo <%= title %></h1>
-          <% for(let project of projects) { %>
-            <%- include('../components/card', {id: project._id, image: project.avatar.path, name: project.name, description: project.description, github: project.github, deploy: project.deploy, docs: project.docs}) %>
-          <% } %>
-        <% } else { %>
-          <%- include('../components/section-projects-not-found', {message: '¡Esta sección está vacía!'}) %>
-        <% } %>
-      </section>
+      <div id="loader-container" class="text-center d-flex justify-content-center align-items-center flex-column">
+        <h1 class="text-primary fs-1 text-uppercase">Cargando</h1>
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+
     </main>
 
     <%# -- Global Footer -- %>
     <%- include('../components/footer') %>
-
+    
     <%# -- Global Scripts -- %>
+    <script src="/public/projects.js"></script>
     <%- include('../utils/scripts') %>
+  
   </body>
 </html>

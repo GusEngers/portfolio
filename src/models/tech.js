@@ -14,12 +14,7 @@ const Tech = model(
     icon: {
       type: String,
       required: true,
-    },
-    details: [
-      {
-        type: String,
-      },
-    ],
+    }
   })
 );
 

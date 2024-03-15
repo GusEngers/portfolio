@@ -1,8 +1,8 @@
 const { Schema, model } = require('mongoose');
 const { TYPES } = require('../utils/constants');
 
-const Project = model(
-  'project',
+const SpanishProject = model(
+  'spanish_project',
   new Schema({
     name: {
       type: String,
@@ -12,7 +12,7 @@ const Project = model(
       type: String,
       required: true,
     },
-    tasks: [
+    features: [
       {
         type: String,
         required: true,
@@ -23,12 +23,12 @@ const Project = model(
       default: false,
     },
     avatar: {
-      type: Schema.Types.Mixed,
+      type: String,
       required: true,
     },
     images: [
       {
-        type: Schema.Types.Mixed,
+        type: String,
       },
     ],
     type: {
@@ -52,7 +52,15 @@ const Project = model(
         type: Schema.Types.ObjectId,
       },
     ],
+    created_at: {
+      type: Date,
+      default: Date.now()
+    },
+    updated_at: {
+      type: Date,
+      default: Date.now()
+    }
   })
 );
 
-module.exports = Project;
+module.exports = SpanishProject;

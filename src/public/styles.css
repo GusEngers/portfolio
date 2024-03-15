@@ -1,0 +1,126 @@
+:root {
+  --primary-color: #00ffff;
+  --primary-color-hover: #00bfbf;
+  --primary-color-hover-bg: #00ffff15;
+  --mdb-primary-rgb: 0, 255, 255;
+  --background-color: #012f2f;
+  --background-color-footer: #001414;
+  --svg-icon-1: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgb%280, 255, 255%29'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --svg-icon-2: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='rgb%280, 255, 255%29'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* -- Reglas MDBootstrap -- */
+.btn-outline-primary {
+  --mdb-btn-color: var(--primary-color);
+  --mdb-btn-hover-bg:var(--primary-color-hover-bg);
+  --mdb-btn-hover-color: var(--primary-color-hover);
+  --mdb-btn-focus-bg: var(--primary-color-hover-bg);
+  --mdb-btn-focus-color: var(--primary-color-hover);
+  --mdb-btn-outline-border-color: var(--primary-color);
+  --mdb-btn-outline-focus-border-color: var(--primary-color-hover);
+  --mdb-btn-outline-hover-border-color: var(--primary-color-hover);
+  border-color: var(--primary-color);
+}
+
+.btn-primary {
+  --mdb-btn-bg: var(--primary-color-hover-bg);
+  --mdb-btn-color: #fff;
+  --mdb-btn-box-shadow: 0 4px 9px -4px var(--primary-color);
+  --mdb-btn-hover-bg: var(--primary-color);
+  --mdb-btn-hover-color: #fff;
+  --mdb-btn-focus-bg: var(--primary-color);
+  --mdb-btn-focus-color: #fff;
+  --mdb-btn-active-bg: var(--primary-color);
+  --mdb-btn-active-color: #fff;
+  --mdb-btn-box-shadow-state: 0 8px 9px -4px var(--primary-color), 0 4px 18px 0 var(--primary-color-hover);
+}
+
+.navbar {
+  background-color: #0000007b;
+}
+
+.card-header,
+.card-footer {
+  border: none;
+}
+
+.btn-outline-primary:disabled {
+  color: var(--background-color);
+  border-color: var(--background-color);
+}
+
+.form-control:focus {
+  border: var(--primary-color);
+}
+
+.accordion-item {
+  background-color: transparent;
+  border-bottom-color: var(--primary-color) !important;
+}
+
+.accordion-button {
+  color: var(--primary-color);
+  background-color: var(--background-color);
+  text-transform: uppercase;
+}
+
+.accordion-button::after {
+  background-image: var(--svg-icon-1);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: var(--svg-icon-2);
+}
+
+/* -- Reglas CSS -- */
+body {
+  background-color: var(--background-color);
+}
+
+#loader-container,
+main {
+  min-height: calc(100vh - 58px);
+}
+
+main {
+  margin-top: 58px;
+}
+
+.card,
+form,
+footer {
+  background-color: var(--background-color-footer);
+}
+
+
+#home-main {
+  background-image: url('/public/371691.webp');
+}
+
+#bg-mask-home {
+  background-color: #000000b3;
+}
+
+#home-title {
+  font-size: 4rem;
+}
+
+.icon-button-link {
+  width: 4rem;
+  height: 4rem;
+  margin: 10px;
+}
+
+.icon-button-icon {
+  font-size: 2rem;
+}
+
+#container-text-contact,
+#container-form-contact {
+  min-width: 49vw;
+}

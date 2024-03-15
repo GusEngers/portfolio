@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <%- include('../utils/head', { title: 'Sobre Mí' }) %>
+  </head>
+
+  <body>
+    <%# -- Global Navbar -- %>
+    <%- include('../components/navbar') %>
+    
+    <%# -- Main -- %>
+    <main class="p-5 text-center">
+      <h1 class="mb-3 text-primary text-uppercase">Gustavo Elías Engers</h1>
+
+      <p class="text-white text-center text-md-start">Soy un <span class="text-primary">Desarrollador Web Full-Stack</span> con enfoque y especialización en <span class="text-primary">Desarrollo Back-End</span>. Me dedico a construir API Web siguiendo los estándares de arquitectura <span class="text-primary">RESTful</span>.</p>
+      <p class="text-white text-center text-md-start">Como stack tecnológico principal para <span class="text-primary">Desarrollo Back-End</span> utilizo a: <span class="text-primary">Node.js</span>, <span class="text-primary">Express</span> y <span class="text-primary">MongoDB</span> junto con <span class="text-primary">Mongoose</span>. Además, puedo optar por <span class="text-primary">PostgreSQL</span> junto con <span class="text-primary">Sequelize</span> cuando se require el uso de bases de datos relacionales. Aunque no suelo utilizarlo, puedo incluso desarrollar pruebas unitarias y funcionales con <span class="text-primary">Mocha</span> y <span class="text-primary">Chai</span>.</p>
+      <p class="text-white text-center text-md-start">En torno al <span class="text-primary">Desarrollo Front-End</span> suelo utilizar <span class="text-primary">React</span>, <span class="text-primary">Angular</span> o <span class="text-primary">HTML</span> junto con <span class="text-primary">Javascript</span> vanilla.</p>
+      <p class="text-white text-center text-md-start">Y en última instancia, como <span class="text-primary">Desarrollador Full-Stack</span> puedo hacer uso completo de los stacks <span class="text-primary">MEAN</span>, <span class="text-primary">MERN</span>, <span class="text-primary">PEAN</span> y <span class="text-primary">PERN</span>.</p>
+      <p class="text-white text-center text-md-start">Actualmente tengo <%= age %> años y me sigo formando y aprendiendo sobre tecnología porque es lo que me apasiona. Además de mi idioma nativo, el español, puedo comunicarme de forma clara en portugués y, aunque no tengo un nivel alto en inglés, puedo leer e interpretar documentaciones en inglés haciendo uso de un traductor.</p>
+      <p class="text-white text-center text-md-start">Mis próximos pasos son aprender inglés, mejorar y perfeccionarme sobre todo en seguridad y buenas prácticas en <span class="text-primary">Desarrollo Back-End</span> y adentrarme a la <span class="text-primary">Programación Orientada a Objetos</span>.</p>
+
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button
+              data-mdb-collapse-init
+              class="accordion-button collapsed"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              Curriculums Disponibles
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingOne"
+            data-mdb-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body text-white">
+              <p>Curriculums actualizados y divididos de forma individual para diferenciar y destacar los datos más importantes en cada sector de aplicación.</p>
+              <div class="btn-group">
+                <% cvs.forEach((cv) => { %>
+                  <a class="btn btn-outline-primary btn-lg" href="<%= cv.path %>" title="Ver cv <%= cv.name %>" target="_blank" rel="noopener noreferrer" role="button"><%= cv.name %></a>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button
+              data-mdb-collapse-init
+              class="accordion-button collapsed"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              Tecnologías Utilizadas
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwo"
+            data-mdb-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body text-white">
+              <p>Estas son algunas de las tecnologías que llegué a utilizar o probar al menos una vez, dentro de las cuales me destaco más en unas que otras, especialmente las vinculadas al <span class="text-primary">Desarrollo Back-End</span> y Bases de Datos.</p>
+              <div class="container d-flex flex-wrap justify-content-center align-items-center mt-3">
+                <% for(let tech of techs) { %>
+                  <a href="/projects?tech=<%= tech._id %>" class="btn btn-primary btn-floating icon-button-link">
+                    <iconify-icon title="Buscar proyectos con <%= tech.name %>" icon="<%= tech.icon %>" class="icon-button-icon"></iconify-icon>
+                  </a>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button
+              data-mdb-collapse-init
+              class="accordion-button collapsed"
+              type="button"
+              data-mdb-toggle="collapse"
+              data-mdb-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+              Formaciones, Certificaciones y Cursos Realizados
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingThree"
+            data-mdb-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body text-white">
+              <ul class="list-group list-group-light mb-3">
+                <% studies.forEach((study) => { %>
+                  <li class="list-group-item">
+                    <h5 class="fw-bold text-primary"><%= study.name %></h5>
+                    <p class="text-white mb-2 fw-bold"><%= study.service %></p>
+                    <p class="text-white mb-0"><%= study.date %></p>
+                    <% if (study.certification) { %>
+                     <a href="<%= study.certification %>" target="_blank" rel="noopener noreferrer">Certificado</a>
+                    <% } %>
+                  </li>
+                <% }) %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <%# -- Global Footer -- %>
+    <%- include('../components/footer') %>
+    
+    <%# -- Global Scripts -- %>
+    <%- include('../utils/scripts') %>
+  
+  </body>
+</html>

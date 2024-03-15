@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <%- include('../utils/head') %>
-    <%- include('../utils/styles') %>
-    <title>GusEngers | Desarrollador Web</title>
+    <%- include('../utils/head', { title: 'Inicio' }) %>
   </head>
+
   <body>
     <%# -- Global Navbar -- %>
-    <%- include('../components/navbar', {filter: false}) %>
+    <%- include('../components/navbar') %>
 
-    <%# -- Main Home -- %>
-    
-    <main id="home-main">
-      <h1>Gustavo Engers</h1>
-      <h2>Desarrollador Web</h2>
-      <div id="home-icons-container">
-        <% for(let tech of techs) { %>
-          <iconify-icon
-            title="<%= tech.name %>"
-            icon="<%= tech.icon %>"
-            class="home-icons">
-          </iconify-icon>
-        <% } %>
+    <%# -- Main -- %>
+    <main id="home-main" class="p-5 text-center bg-image">
+      <div id="bg-mask-home" class="mask">
+        <div class="d-flex justify-content-center align-items-center h-100" style="min-height: calc(100vh - 58px);">
+          <div class="text-white">
+            <h1 id="home-title" class="mb-3 text-primary text-uppercase">Gustavo Engers</h1>
+            <h4 class="mb-3 text-uppercase">Desarrollador Web</h4>
+            <a class="btn btn-outline-primary btn-lg" href="/projects" title="Ver todos los proyectos" role="button">Proyectos</a>
+            
+            <%# -- Tech Group -- %>
+            <div class="container d-flex flex-wrap justify-content-center align-items-center mt-3">
+              <% for(let tech of techs) { %>
+                <a href="/projects?tech=<%= tech._id %>" class="btn btn-primary btn-floating icon-button-link">
+                  <iconify-icon title="Buscar proyectos con <%= tech.name %>" icon="<%= tech.icon %>" class="icon-button-icon"></iconify-icon>
+                </a>
+              <% } %>
+            </div>
+
+          </div>
+        </div>
       </div>
-      <a
-        title="Ir a Proyectos"
-        href="/proyectos"
-        type="button"
-        class="big-button"
-      >Mis Proyectos</a>
     </main>
 
     <%# -- Global Footer -- %>
