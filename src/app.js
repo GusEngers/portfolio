@@ -14,7 +14,7 @@ app.use(require('morgan')('dev'));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views', 'pages'));
+app.set('views', __dirname + '/views/pages');
 
 app.use(handleCors);
 
